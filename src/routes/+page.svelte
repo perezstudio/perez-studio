@@ -49,20 +49,24 @@
 		</div>
 	</section>
 	<section class="flex w-full flex-col items-center gap-8 px-4 py-10">
-		<div class="flex w-full max-w-[1200px] gap-2">
+		<div class="flex grid w-full max-w-[1248px] grid-cols-1 gap-8 md:grid-cols-2">
 			<LinkBlock
+				link="/projects"
 				title="Projects"
 				paragraph="I'm currently working on Civics Lab, a suite of tools and resources designed for political campaigns and political parties."
 			/>
 			<LinkBlock
+				link="/blog"
 				title="Blog"
 				paragraph="You can find my writing on my blog. I write mostly about frontend web development."
 			/>
 			<LinkBlock
+				link="/newsletter"
 				title="Newsletter"
 				paragraph="I'm currently working on Build UI, a subscription video site for frontend developers."
 			/>
 			<LinkBlock
+				link="/contact"
 				title="Contact Me"
 				paragraph="I'm currently working on Build UI, a subscription video site for frontend developers."
 			/>
