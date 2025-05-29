@@ -1,9 +1,16 @@
 <script>
 	import LinkBlock from '$lib/components/LinkCard.svelte';
+	import Email from '$lib/icons/email.svelte';
+	import Twitter from '$lib/icons/twitter.svelte';
+	import Instagram from '$lib/icons/instagram.svelte';
+	import Dribbble from '$lib/icons/dribbble.svelte';
+	import Behance from '$lib/icons/behance.svelte';
+	import GitHub from '$lib/icons/github.svelte';
+	import LinkedIn from '$lib/icons/linkedin.svelte';
 </script>
 
 <div>
-	<section class="flex w-full justify-center px-4 pt-16 pb-10">
+	<section class="flex w-full flex-col items-center gap-8 px-4 pt-16 pb-10">
 		<div class="flex w-full max-w-[1200px] flex-col gap-2">
 			<div class="flex max-w-3xl flex-col gap-2">
 				<h1 class="text-5xl font-extrabold">Hi there, I'm Kevin</h1>
@@ -14,32 +21,35 @@
 				</p>
 			</div>
 			<div class="flex flex-row items-center gap-2">
-				<a href="#">
-					<img src="email.svg" class="w-8" />
+				<a href="/contact">
+					<Email className="w-8 fill-slate-500" />
 				</a>
 				<a href="#">
-					<img src="twitter.svg" class="w-8" />
+					<Twitter className="w-8 fill-slate-500" />
 				</a>
 				<a href="#">
-					<img src="instagram.svg" class="w-8" />
+					<Instagram className="w-8 fill-slate-500" />
 				</a>
 				<a href="#">
-					<img src="dribbble.svg" class="w-8" />
+					<Dribbble className="w-8 fill-slate-500" />
 				</a>
 				<a href="#">
-					<img src="behance.svg" class="w-8" />
+					<Behance className="w-8 fill-slate-500" />
 				</a>
 				<a href="#">
-					<img src="github.svg" class="w-8" />
+					<GitHub className="w-8 fill-slate-500" />
 				</a>
 				<a href="#">
-					<img src="linkedin.svg" class="w-8" />
+					<LinkedIn className="w-8 fill-slate-500" />
 				</a>
 			</div>
 		</div>
+		<div class="flex w-full max-w-[1248px] justify-center rounded-xl bg-slate-100">
+			<img src="main-header.png" />
+		</div>
 	</section>
-	<section>
-		<div>
+	<section class="flex w-full flex-col items-center gap-8 px-4 py-10">
+		<div class="flex w-full max-w-[1200px] gap-2">
 			<LinkBlock
 				title="Projects"
 				paragraph="I'm currently working on Civics Lab, a suite of tools and resources designed for political campaigns and political parties."
