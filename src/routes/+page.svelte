@@ -45,7 +45,7 @@
 			</div>
 		</div>
 		<div class="flex w-full max-w-[1248px] justify-center rounded-xl bg-slate-100">
-			<img src="main-header.png" />
+			<img src="main-header.png" class="object-cover" />
 		</div>
 	</section>
 	<section class="flex w-full flex-col items-center gap-8 px-4 py-10">
@@ -84,21 +84,21 @@
 		</div>
 		<div class="flex grid w-full w-full max-w-[1248px] grid-cols-1 gap-8 md:grid-cols-2">
 			<div class="col-span-1 flex flex-col gap-2 md:col-span-2">
-				<img src="Milwaukee@2x.png" class="rounded-xl" />
+				<img src="Milwaukee@2x.png" class="h-[350px] w-full rounded-xl object-cover md:h-[460px]" />
 				<div class="px-6">
 					<h3 class="text-xl font-bold text-slate-900">Milwaukee</h3>
 					<p class="text-lg font-medium text-slate-500">2024 - Present</p>
 				</div>
 			</div>
 			<div class="col-span-1 flex flex-col gap-2">
-				<img src="Provo@2x.png" class="rounded-xl" />
+				<img src="Provo@2x.png" class="h-[350px] w-full rounded-xl object-cover md:h-[520px]" />
 				<div class="px-6">
 					<h3 class="text-xl font-bold text-slate-900">Provo</h3>
 					<p class="text-lg font-medium text-slate-500">2000 - 2024</p>
 				</div>
 			</div>
 			<div class="col-span-1 flex flex-col gap-2">
-				<img src="San Diego@2x.png" class="rounded-xl" />
+				<img src="San Diego@2x.png" class="h-[350px] w-full rounded-xl object-cover md:h-[520px]" />
 				<div class="px-6">
 					<h3 class="text-xl font-bold text-slate-900">San Diego</h3>
 					<p class="text-lg font-medium text-slate-500">1993 - 2000</p>
