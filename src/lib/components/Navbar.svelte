@@ -20,7 +20,7 @@
 </script>
 
 <nav class="flex w-full justify-center px-4 py-4">
-	<div class="flex w-full max-w-[1200px] flex-col">
+	<div class="flex w-full max-w-[1248px] flex-col md:px-6">
 		<!-- Main navbar row -->
 		<div class="flex w-full items-center justify-between">
 			<a href="/">
