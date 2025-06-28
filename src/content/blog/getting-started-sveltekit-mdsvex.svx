@@ -1,0 +1,94 @@
+---
+title: "Getting Started with SvelteKit and MDSveX"
+description: "Learn how to set up a blog with SvelteKit and MDSveX for an amazing developer experience"
+date: "2024-12-10"
+published: true
+tags: ["SvelteKit", "MDSveX", "Blogging", "Web Development"]
+coverImage: "/images/sveltekit-mdsvex.jpg"
+---
+
+# Getting Started with SvelteKit and MDSveX
+
+SvelteKit combined with MDSveX creates an incredibly powerful and flexible blogging platform. In this post, I'll walk you through setting up a blog that allows you to write in Markdown while having the full power of Svelte components.
+
+## What is MDSveX?
+
+MDSveX is a Markdown preprocessor for Svelte that allows you to:
+- Write content in Markdown
+- Use Svelte components within your Markdown
+- Have full TypeScript support
+- Create rich, interactive content
+
+## Setting Up Your Project
+
+First, let's install the necessary dependencies:
+
+```bash
+npm install mdsvex
+npm install -D @tailwindcss/typography
+```
+
+## Configuring MDSveX
+
+In your `svelte.config.js`, add the MDSveX preprocessor:
+
+```javascript
+import { mdsvex } from 'mdsvex';
+import adapter from '@sveltejs/adapter-auto';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+
+const config = {
+  preprocess: [vitePreprocess(), mdsvex({
+    extensions: ['.svx'],
+    layout: {
+      blog: 'src/lib/components/BlogLayout.svelte'
+    }
+  })],
+  kit: {
+    adapter: adapter()
+  },
+  extensions: ['.svelte', '.svx']
+};
+
+export default config;
+```
+
+## Creating Content
+
+With MDSveX, you can create rich content that combines Markdown with Svelte components:
+
+```markdown
+---
+title: "My Blog Post"
+date: "2024-12-10"
+---
+
+# My Blog Post
+
+Here's some regular Markdown content.
+
+<script>
+  import MyComponent from '$lib/MyComponent.svelte';
+</script>
+
+<MyComponent />
+
+And back to Markdown!
+```
+
+## Dynamic Routing
+
+SvelteKit's file-based routing makes it easy to create dynamic blog routes. Create a `[slug]` directory and load your content dynamically.
+
+## Benefits
+
+- **Performance**: Static generation with SvelteKit
+- **Flexibility**: Mix Markdown with interactive components
+- **Developer Experience**: TypeScript support and hot reloading
+- **SEO**: Server-side rendering out of the box
+
+## Conclusion
+
+SvelteKit and MDSveX provide an excellent foundation for modern blogs and documentation sites. The ability to seamlessly integrate Svelte components within Markdown content opens up endless possibilities for creating engaging, interactive content.
+
+Try it out for your next project – you won't be disappointed!

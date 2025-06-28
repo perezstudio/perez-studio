@@ -1,0 +1,49 @@
+---
+title: "Portfolio Website"
+description: "A modern, responsive portfolio website built with SvelteKit and Tailwind CSS"
+date: "2024-12-15"
+published: true
+featured: true
+tags: ["SvelteKit", "Tailwind CSS", "TypeScript", "Web Design"]
+coverImage: "/images/portfolio-cover.jpg"
+demoUrl: "https://your-portfolio.com"
+githubUrl: "https://github.com/yourusername/portfolio"
+---
+
+# Portfolio Website
+
+This portfolio website showcases my work as a developer and designer. Built with modern web technologies, it features a clean, responsive design and optimized performance.
+
+## Features
+
+- **Responsive Design**: Works perfectly on all devices
+- **Fast Performance**: Optimized for speed with SvelteKit
+- **Modern UI**: Clean, professional design with Tailwind CSS
+- **SEO Optimized**: Structured for search engine visibility
+
+## Technology Stack
+
+- **Frontend**: SvelteKit, TypeScript
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
+- **Content**: MDSveX for blog posts
+
+## Challenges & Solutions
+
+Building this portfolio presented several interesting challenges:
+
+### Performance Optimization
+One of the main goals was to achieve excellent performance scores. I implemented:
+- Image optimization and lazy loading
+- Code splitting and preloading
+- Minimal JavaScript bundle size
+
+### Content Management
+For easy content management, I integrated MDSveX which allows me to:
+- Write content in Markdown
+- Include Svelte components within posts
+- Maintain type safety across the application
+
+## Outcome
+
+The final result is a fast, modern portfolio that effectively showcases my work and provides an excellent user experience.

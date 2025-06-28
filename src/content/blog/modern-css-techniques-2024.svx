@@ -1,0 +1,137 @@
+---
+title: "Modern CSS Techniques for 2024"
+description: "Explore the latest CSS features and techniques that are revolutionizing web design in 2024"
+date: "2024-12-05"
+published: true
+tags: ["CSS", "Web Design", "Frontend", "Modern Web"]
+coverImage: "/images/modern-css.jpg"
+---
+
+# Modern CSS Techniques for 2024
+
+CSS has evolved tremendously in recent years, giving developers powerful new tools to create beautiful, responsive, and maintainable websites. Let's explore some of the most exciting modern CSS techniques you should be using in 2024.
+
+## Container Queries
+
+Container queries allow elements to respond to the size of their container rather than the viewport:
+
+```css
+.card-container {
+  container-type: inline-size;
+}
+
+@container (min-width: 400px) {
+  .card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+}
+```
+
+This is a game-changer for component-based design systems!
+
+## CSS Grid Subgrid
+
+Subgrid allows nested grids to participate in their parent's grid:
+
+```css
+.parent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.child-grid {
+  display: grid;
+  grid-column: span 2;
+  grid-template-columns: subgrid;
+}
+```
+
+## Cascade Layers
+
+Organize your CSS with explicit layering:
+
+```css
+@layer reset, base, components, utilities;
+
+@layer base {
+  h1 { font-size: 2rem; }
+}
+
+@layer components {
+  .button { padding: 0.5rem 1rem; }
+}
+```
+
+## Modern Color Functions
+
+CSS now supports advanced color manipulation:
+
+```css
+:root {
+  --primary: oklch(0.7 0.15 200);
+  --primary-light: oklch(from var(--primary) calc(l + 0.1) c h);
+  --primary-dark: oklch(from var(--primary) calc(l - 0.1) c h);
+}
+```
+
+## Logical Properties
+
+Write CSS that works with different writing modes:
+
+```css
+.element {
+  margin-inline: 1rem;
+  padding-block: 0.5rem;
+  border-inline-start: 2px solid blue;
+}
+```
+
+## :has() Selector
+
+Style elements based on their descendants:
+
+```css
+.card:has(img) {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+form:has(:invalid) {
+  border-color: red;
+}
+```
+
+## CSS Nesting
+
+Write more maintainable CSS with native nesting:
+
+```css
+.button {
+  background: blue;
+  color: white;
+  
+  &:hover {
+    background: darkblue;
+  }
+  
+  &.primary {
+    background: green;
+  }
+}
+```
+
+## Best Practices for 2024
+
+1. **Use CSS Custom Properties**: They're now universally supported
+2. **Embrace Logical Properties**: Future-proof your layouts
+3. **Layer Your CSS**: Organize styles with cascade layers
+4. **Progressive Enhancement**: Use modern features with fallbacks
+5. **Component-First Thinking**: Design with container queries in mind
+
+## Conclusion
+
+Modern CSS gives us incredible power to create sophisticated layouts and interactions with less code and better maintainability. These techniques will help you build more robust, accessible, and beautiful websites.
+
+The future of CSS is bright, and there's never been a better time to be a frontend developer!
