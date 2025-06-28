@@ -68,19 +68,31 @@ export async function getProjects(): Promise<Project[]> {
 }
 
 export async function getPost(slug: string): Promise<PostModule | null> {
-	try {
-		const module = await import(`/src/content/blog/${slug}.svx`);
-		return module;
-	} catch (error) {
+	const modules = import.meta.glob<PostModule>('/src/content/blog/*.svx', { 
+		eager: true 
+	});
+	
+	const postPath = `/src/content/blog/${slug}.svx`;
+	const module = modules[postPath];
+	
+	if (!module) {
 		return null;
 	}
+	
+	return module;
 }
 
 export async function getProject(slug: string): Promise<ProjectModule | null> {
-	try {
-		const module = await import(`/src/content/projects/${slug}.svx`);
-		return module;
-	} catch (error) {
+	const modules = import.meta.glob<ProjectModule>('/src/content/projects/*.svx', { 
+		eager: true 
+	});
+	
+	const projectPath = `/src/content/projects/${slug}.svx`;
+	const module = modules[projectPath];
+	
+	if (!module) {
 		return null;
 	}
+	
+	return module;
 }
