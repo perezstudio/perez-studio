@@ -13,7 +13,6 @@ demoButtonText: "Visit Website"
 
 <script>
   import ToolsUsed from '$lib/components/ToolsUsed.svelte';
-  
   const projectTools = [
 	{
 	  slug: 'swiftui',
