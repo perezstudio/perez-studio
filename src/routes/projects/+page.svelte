@@ -49,7 +49,7 @@
 							{/if}
 							<div class="flex flex-col gap-1 px-6">
 								<h3
-									class="text-2xl font-bold text-gray-900 transition-colors group-hover:text-blue-600"
+									class="text-xl font-bold text-gray-900 transition-colors group-hover:text-blue-600"
 								>
 									{project.title}
 								</h3>
@@ -93,7 +93,7 @@
 							{/if}
 							<div class="flex flex-col gap-1 px-6">
 								<h3
-									class="text-2xl font-bold text-gray-900 transition-colors group-hover:text-blue-600"
+									class="text-xl font-bold text-gray-900 transition-colors group-hover:text-blue-600"
 								>
 									{project.title}
 								</h3>
