@@ -10,12 +10,13 @@ role: "Full-Stack Developer"
 status: "completed"
 tags: ["ecommerce", "sveltekit", "stripe", "tailwind"]
 category: "web-development"
+primaryTools: ["sveltekit", "tailwindcss", "postgresql", "stripe"]
 ---
 
 <script>
   import Gallery from '$lib/components/Gallery.svelte';
   import PortfolioImage from '$lib/components/PortfolioImage.svelte';
-  import TechStack from '$lib/components/TechStack.svelte';
+  import ToolsUsed from '$lib/components/ToolsUsed.svelte';
   
   const projectImages = [
     {
@@ -40,46 +41,91 @@ category: "web-development"
     }
   ];
   
-  const technologies = [
+  // Tools used in this project with proper structure
+  const projectTools = [
     {
+      slug: 'sveltekit',
       name: 'SvelteKit',
       icon: '/icons/svelte.svg',
+      logo: '/images/tools/sveltekit-logo.png',
       description: 'Full-stack framework for blazing fast performance',
       featured: true,
-      category: 'frontend'
+      category: 'frontend',
+      role: 'Primary framework for building the entire application with SSR and routing',
+      color: '#ff3e00'
     },
     {
-      name: 'TypeScript',
-      icon: '/icons/typescript.svg',
-      description: 'Type-safe development experience',
-      featured: true,
-      category: 'language'
-    },
-    {
+      slug: 'tailwindcss',
       name: 'Tailwind CSS',
       icon: '/icons/tailwind.svg',
+      logo: '/images/tools/tailwind-logo.png',
       description: 'Utility-first CSS framework for rapid UI development',
       featured: true,
-      category: 'frontend'
+      category: 'frontend',
+      role: 'Design system and responsive styling across all components',
+      color: '#06b6d4'
     },
     {
-      name: 'Stripe',
-      icon: '/icons/stripe.svg',
-      description: 'Secure payment processing and subscription management',
-      featured: true,
-      category: 'backend'
-    },
-    {
+      slug: 'postgresql',
       name: 'PostgreSQL',
       icon: '/icons/postgresql.svg',
+      logo: '/images/tools/postgresql-logo.png',
       description: 'Robust relational database for complex queries',
-      category: 'database'
+      featured: true,
+      category: 'database',
+      role: 'Primary database for storing product, order, and user data',
+      color: '#336791'
     },
     {
+      slug: 'stripe',
+      name: 'Stripe',
+      icon: '/icons/stripe.svg',
+      logo: '/images/tools/stripe-logo.png',
+      description: 'Secure payment processing and subscription management',
+      featured: true,
+      category: 'backend',
+      role: 'Payment processing, subscription billing, and financial reporting',
+      color: '#635bff'
+    },
+    {
+      slug: 'prisma',
       name: 'Prisma',
       icon: '/icons/prisma.svg',
+      logo: '/images/tools/prisma-logo.png',
       description: 'Modern database toolkit and ORM',
-      category: 'backend'
+      category: 'database',
+      role: 'Database ORM, migrations, and type-safe database queries',
+      color: '#2d3748'
+    },
+    {
+      slug: 'typescript',
+      name: 'TypeScript',
+      icon: '/icons/typescript.svg',
+      logo: '/images/tools/typescript-logo.png',
+      description: 'Type-safe development experience',
+      category: 'language',
+      role: 'Type safety and enhanced developer experience across the codebase',
+      color: '#3178c6'
+    },
+    {
+      slug: 'figma',
+      name: 'Figma',
+      icon: '/icons/figma.svg',
+      logo: '/images/tools/figma-logo.png',
+      description: 'Collaborative interface design tool',
+      category: 'design',
+      role: 'UI/UX design, prototyping, and design system documentation',
+      color: '#f24e1e'
+    },
+    {
+      slug: 'vercel',
+      name: 'Vercel',
+      icon: '/icons/vercel.svg',
+      logo: '/images/tools/vercel-logo.png',
+      description: 'Platform for frontend frameworks and static sites',
+      category: 'devops',
+      role: 'Deployment platform with automatic builds and global CDN',
+      color: '#000000'
     }
   ];
 </script>
@@ -115,15 +161,23 @@ The redesign process started with comprehensive user research and competitor ana
 
 ## Technical Implementation
 
-<TechStack {technologies} />
-
-The application was built with performance as a top priority. We implemented:
+The application was built with performance as a top priority. Key technical decisions included:
 
 - **Server-side rendering** for improved SEO and initial load times
 - **Progressive image loading** to reduce bandwidth usage
 - **Efficient state management** using Svelte stores
 - **Type-safe API integration** with comprehensive error handling
 - **Automated testing** with Playwright for end-to-end reliability
+
+### Architecture Highlights
+
+The application follows a clean architecture pattern with clear separation of concerns:
+
+- **Frontend**: SvelteKit with TypeScript for type safety
+- **Styling**: Tailwind CSS with custom design system
+- **Database**: PostgreSQL with Prisma ORM
+- **Payments**: Stripe integration with webhook handling
+- **Deployment**: Vercel with automatic deployments
 
 ## Results
 
@@ -160,8 +214,8 @@ The platform was built with scalability in mind, and we've identified several ar
 - Multi-language and currency support
 - Progressive Web App (PWA) capabilities
 
+<ToolsUsed tools={projectTools} />
+
 ---
 
 *This project showcases the power of modern web technologies in creating fast, scalable e-commerce solutions. The combination of SvelteKit's performance optimizations and thoughtful UX design resulted in a platform that exceeds both user expectations and business goals.*
-
-

@@ -10,6 +10,42 @@ demoUrl: "https://task-app-demo.com"
 githubUrl: "https://github.com/yourusername/task-manager"
 ---
 
+<script>
+  import ToolsUsed from '$lib/components/ToolsUsed.svelte';
+  
+  const projectTools = [
+	{
+	  slug: 'sveltekit',
+	  name: 'SvelteKit',
+	  logo: '/images/tools/sveltekit-logo.png',
+	  description: 'Full-stack framework for blazing fast performance',
+	  featured: true,
+	  category: 'frontend',
+	  role: 'Primary framework for the entire application',
+	  color: '#ff3e00'
+	},
+	{
+	  slug: 'tailwindcss',
+	  name: 'Tailwind CSS',
+	  logo: '/images/tools/tailwind-logo.png',
+	  description: 'Utility-first CSS framework',
+	  featured: true,
+	  category: 'frontend',
+	  role: 'Styling and responsive design',
+	  color: '#06b6d4'
+	},
+	{
+	  slug: 'postgresql',
+	  name: 'PostgreSQL',
+	  logo: '/images/tools/postgresql-logo.png',
+	  description: 'Robust relational database',
+	  category: 'database',
+	  role: 'Data storage and management',
+	  color: '#336791'
+	}
+  ];
+</script>
+
 # Task Management App
 
 A comprehensive task management application designed for teams and individuals to organize, track, and collaborate on projects efficiently.
@@ -52,3 +88,6 @@ Implementing real-time updates across multiple users required careful handling o
 ## Results
 
 The application successfully handles multiple teams with thousands of tasks, providing a smooth collaborative experience with sub-second real-time updates.
+
+<!-- Tools section at the bottom -->
+<ToolsUsed tools={projectTools} />

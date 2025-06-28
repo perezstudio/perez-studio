@@ -10,6 +10,42 @@ demoUrl: "https://your-portfolio.com"
 githubUrl: "https://github.com/yourusername/portfolio"
 ---
 
+<script>
+  import ToolsUsed from '$lib/components/ToolsUsed.svelte';
+  
+  const projectTools = [
+	{
+	  slug: 'sveltekit',
+	  name: 'SvelteKit',
+	  logo: '/images/tools/sveltekit-logo.png',
+	  description: 'Full-stack framework for blazing fast performance',
+	  featured: true,
+	  category: 'frontend',
+	  role: 'Primary framework for the entire application',
+	  color: '#ff3e00'
+	},
+	{
+	  slug: 'tailwindcss',
+	  name: 'Tailwind CSS',
+	  logo: '/images/tools/tailwind-logo.png',
+	  description: 'Utility-first CSS framework',
+	  featured: true,
+	  category: 'frontend',
+	  role: 'Styling and responsive design',
+	  color: '#06b6d4'
+	},
+	{
+	  slug: 'postgresql',
+	  name: 'PostgreSQL',
+	  logo: '/images/tools/postgresql-logo.png',
+	  description: 'Robust relational database',
+	  category: 'database',
+	  role: 'Data storage and management',
+	  color: '#336791'
+	}
+  ];
+</script>
+
 # Portfolio Website
 
 This portfolio website showcases my work as a developer and designer. Built with modern web technologies, it features a clean, responsive design and optimized performance.
@@ -47,3 +83,6 @@ For easy content management, I integrated MDSveX which allows me to:
 ## Outcome
 
 The final result is a fast, modern portfolio that effectively showcases my work and provides an excellent user experience.
+
+<!-- Tools section at the bottom -->
+<ToolsUsed tools={projectTools} />

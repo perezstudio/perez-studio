@@ -10,6 +10,42 @@ demoUrl: "https://ecommerce-demo.com"
 githubUrl: "https://github.com/yourusername/ecommerce"
 ---
 
+<script>
+  import ToolsUsed from '$lib/components/ToolsUsed.svelte';
+  
+  const projectTools = [
+	{
+	  slug: 'sveltekit',
+	  name: 'SvelteKit',
+	  logo: '/images/tools/sveltekit-logo.png',
+	  description: 'Full-stack framework for blazing fast performance',
+	  featured: true,
+	  category: 'frontend',
+	  role: 'Primary framework for the entire application',
+	  color: '#ff3e00'
+	},
+	{
+	  slug: 'tailwindcss',
+	  name: 'Tailwind CSS',
+	  logo: '/images/tools/tailwind-logo.png',
+	  description: 'Utility-first CSS framework',
+	  featured: true,
+	  category: 'frontend',
+	  role: 'Styling and responsive design',
+	  color: '#06b6d4'
+	},
+	{
+	  slug: 'postgresql',
+	  name: 'PostgreSQL',
+	  logo: '/images/tools/postgresql-logo.png',
+	  description: 'Robust relational database',
+	  category: 'database',
+	  role: 'Data storage and management',
+	  color: '#336791'
+	}
+  ];
+</script>
+
 # E-commerce Platform
 
 A modern, full-featured e-commerce platform built with Next.js, featuring secure payments, inventory management, and an intuitive admin dashboard.
@@ -74,3 +110,6 @@ Integrated Stripe for secure payment handling:
 ## Outcome
 
 The platform processes thousands of transactions monthly with 99.9% uptime and sub-2-second page load times, providing an excellent user experience for both customers and administrators.
+
+<!-- Tools section at the bottom -->
+<ToolsUsed tools={projectTools} />

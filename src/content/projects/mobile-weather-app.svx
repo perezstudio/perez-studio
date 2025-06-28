@@ -10,6 +10,42 @@ demoUrl: "https://weather-app-demo.com"
 githubUrl: "https://github.com/yourusername/weather-app"
 ---
 
+<script>
+  import ToolsUsed from '$lib/components/ToolsUsed.svelte';
+  
+  const projectTools = [
+	{
+	  slug: 'sveltekit',
+	  name: 'SvelteKit',
+	  logo: '/images/tools/sveltekit-logo.png',
+	  description: 'Full-stack framework for blazing fast performance',
+	  featured: true,
+	  category: 'frontend',
+	  role: 'Primary framework for the entire application',
+	  color: '#ff3e00'
+	},
+	{
+	  slug: 'tailwindcss',
+	  name: 'Tailwind CSS',
+	  logo: '/images/tools/tailwind-logo.png',
+	  description: 'Utility-first CSS framework',
+	  featured: true,
+	  category: 'frontend',
+	  role: 'Styling and responsive design',
+	  color: '#06b6d4'
+	},
+	{
+	  slug: 'postgresql',
+	  name: 'PostgreSQL',
+	  logo: '/images/tools/postgresql-logo.png',
+	  description: 'Robust relational database',
+	  category: 'database',
+	  role: 'Data storage and management',
+	  color: '#336791'
+	}
+  ];
+</script>
+
 # Mobile Weather App
 
 A sleek, user-friendly weather application that provides accurate forecasts and real-time weather data for locations worldwide.
@@ -39,3 +75,6 @@ The app prioritizes simplicity and clarity:
 - Accessibility features for all users
 
 This project demonstrated my ability to create polished mobile applications with complex data integration and smooth user experiences.
+
+<!-- Tools section at the bottom -->
+<ToolsUsed tools={projectTools} />

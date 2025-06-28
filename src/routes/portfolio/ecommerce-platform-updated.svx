@@ -227,3 +227,4 @@ The platform was built with scalability in mind, and we've identified several ar
 *This project showcases the power of modern web technologies in creating fast, scalable e-commerce solutions. The combination of SvelteKit's performance optimizations and thoughtful UX design resulted in a platform that exceeds both user expectations and business goals.*
 
 **Explore the tools**: [SvelteKit](/tools/sveltekit) • [Tailwind CSS](/tools/tailwindcss) • [PostgreSQL](/tools/postgresql) • [Stripe](/tools/stripe)
+

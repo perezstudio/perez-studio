@@ -13,8 +13,10 @@
   style="--tool-color: {tool.color || '#6b7280'}"
 >
   <div class="tool-icon">
-    {#if tool.icon}
-      <img src={tool.icon} alt={tool.name} />
+    {#if tool.logo}
+      <img src={tool.logo} alt="{tool.name} logo" class="tool-logo" />
+    {:else if tool.icon}
+      <img src={tool.icon} alt="{tool.name} icon" class="tool-icon-img" />
     {:else}
       <div class="tool-icon-fallback">
         {tool.name.charAt(0)}
@@ -94,18 +96,27 @@
     margin-bottom: 1rem;
   }
   
-  .tool-icon img {
+  .tool-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  }
+  
+  .tool-icon-img {
     width: 48px;
     height: 48px;
     object-fit: contain;
   }
   
-  .tool-card--small .tool-icon img {
+  .tool-card--small .tool-logo,
+  .tool-card--small .tool-icon-img {
     width: 32px;
     height: 32px;
   }
   
-  .tool-card--large .tool-icon img {
+  .tool-card--large .tool-logo,
+  .tool-card--large .tool-icon-img {
     width: 64px;
     height: 64px;
   }
