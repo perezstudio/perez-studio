@@ -1,0 +1,71 @@
+---
+title: "SwiftFlow"
+description: "A no code app builder for the Apple Ecosystem."
+date: "2024-10-05"
+published: true
+featured: true
+tags: ["Apps", "macOS", "Developer Tools"]
+coverImage: "/images/projects/swiftflow-cover.png"
+thumbnailImage: "/images/projects/swiftflow-thumbnail.png"
+demoUrl: "https://swiftflow.app"
+demoButtonText: "Visit Website"
+---
+
+<script>
+  import ToolsUsed from '$lib/components/ToolsUsed.svelte';
+  
+  const projectTools = [
+	{
+	  slug: 'swiftui',
+	  name: 'SwiftUI',
+	  logo: '/images/tools/swiftui.png',
+	  description: 'UI framework for great apps on the Apple Ecosystem',
+	  featured: true,
+	  category: 'frontend',
+	  role: 'Primary framework for the entire application',
+	  color: '#ff3e00'
+	},
+	{
+	  slug: 'swiftdata',
+	  name: 'SwiftData',
+	  logo: '/images/tools/swiftdata.png',
+	  description: 'Local Persistence for iOS Apps built on SQLite',
+	  featured: true,
+	  category: 'backend',
+	  role: 'Local App Persistence',
+	  color: '#06b6d4'
+	}
+  ];
+</script>
+
+# Introducing SwiftFlow: Empowering No-Code App Creation for the Apple Ecosystem
+
+Building apps for Apple devices has traditionally required deep coding expertise and a solid grasp of Swift and SwiftUI. With SwiftFlow, I set out to change that—making app development accessible, visual, and remarkably efficient for everyone, from designers to seasoned developers.
+
+## What Is SwiftFlow?
+
+SwiftFlow is a no-code app builder crafted specifically for the Apple ecosystem. It offers a robust visual editor that lets users design beautiful, responsive interfaces using a simple drag-and-drop workflow. Beneath the surface, SwiftFlow generates clean, semantic SwiftUI code—ready for publishing or seamless handoff to developers.
+
+## Key Features
+* Visual Editor: Design interfaces visually, leveraging the power of Swift and SwiftUI without writing code.
+* Drag-and-Drop Simplicity: Quickly assemble UIs by dragging components onto a responsive canvas.
+* Custom Components: Create and reuse custom UI elements for unmatched design flexibility.
+* Platform Versatility: Build apps that shine on Mac, iPad, and iPhone, all from a single project.
+* SwiftUI Code Export: Instantly export your designs into production-ready SwiftUI code.
+* Logic Workflows: Define sophisticated app logic—including state management, user interactions, and workflows—using intuitive visual tools.
+* No-Code Actions & Conditional Logic: Automate actions and create complex conditional flows without touching a single line of code.
+* Visual Debugger: Troubleshoot with clear error messages and smart suggestions for a smoother build process.
+* Developer Friendly: Add custom Swift code and export projects for further refinement or integration into larger applications.
+
+## Why I Built SwiftFlow
+
+As a developer and designer, I’ve seen firsthand how the gap between visual design and production code can slow down projects and stifle creativity. SwiftFlow bridges that gap, empowering users to bring their ideas to life visually—while still producing robust, high-quality code under the hood.
+
+## The Result
+
+SwiftFlow enables anyone to prototype, build, and deploy apps for the Apple ecosystem with unprecedented speed and flexibility. Whether you’re a hobbyist, freelancer, or part of a larger team, SwiftFlow gives you the tools to create, customize, and launch your next great app—without compromise.
+
+Ready to see what you can build? Sign up for our early beta and experience the future of no-code app development for Apple platforms.
+
+<!-- Tools section at the bottom -->
+<ToolsUsed tools={projectTools} />

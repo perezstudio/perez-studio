@@ -74,7 +74,7 @@
 							rel="noopener noreferrer"
 							class="inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
 						>
-							View Live Demo →
+							{project.demoButtonText}
 						</a>
 					{/if}
 					{#if project.githubUrl}

@@ -4,8 +4,9 @@ description: "A collaborative task management application with real-time updates
 date: "2024-11-20"
 published: true
 featured: false
-tags: ["React", "Node.js", "Socket.io", "MongoDB", "Real-time"]
+tags: ["Mobile App", "Node.js", "Socket.io", "MongoDB", "Real-time"]
 coverImage: "/images/task-app-cover.jpg"
+thumbnailImage: "/images/task-app-thumbnail.jpg"
 demoUrl: "https://task-app-demo.com"
 githubUrl: "https://github.com/yourusername/task-manager"
 ---
