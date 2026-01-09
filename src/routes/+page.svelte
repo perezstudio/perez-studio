@@ -11,7 +11,7 @@
 
 <div>
 	<section class="flex w-full flex-col items-center gap-8 px-4 pt-16 pb-10">
-		<div class="flex w-full max-w-[1248px] flex-col gap-2 md:px-6">
+		<div class="flex w-full max-w-312 flex-col gap-2 md:px-6">
 			<div class="flex max-w-3xl flex-col gap-2">
 				<h1 class="text-5xl font-extrabold">Hi there, I'm Kevin</h1>
 				<p>
@@ -44,12 +44,12 @@
 				</a>
 			</div>
 		</div>
-		<div class="flex w-full max-w-[1248px] justify-center">
-			<img src="main-header.png" class="w-full rounded-xl bg-slate-100 object-cover" />
+		<div class="flex w-full max-w-312 justify-center">
+			<img src="main-header.png" class="w-full rounded-xl bg-slate-100 object-cover" alt="banner graphic"/>
 		</div>
 	</section>
 	<section class="flex w-full flex-col items-center gap-8 px-4 py-10">
-		<div class="flex grid w-full max-w-[1248px] grid-cols-1 gap-8 md:grid-cols-2">
+		<div class="grid w-full max-w-312 grid-cols-1 gap-8 md:grid-cols-2">
 			<LinkBlock
 				link="/projects"
 				title="Projects"
@@ -73,7 +73,7 @@
 		</div>
 	</section>
 	<section class="flex w-full flex-col items-center gap-8 px-4 pt-16 pb-10">
-		<div class="flex w-full max-w-[1248px] flex-col gap-2 md:px-6">
+		<div class="flex w-full max-w-312 flex-col gap-2 md:px-6">
 			<div class="flex max-w-3xl flex-col gap-2">
 				<h2 class="text-5xl font-extrabold">My Life</h2>
 				<p>
@@ -82,23 +82,23 @@
 				</p>
 			</div>
 		</div>
-		<div class="flex grid w-full w-full max-w-[1248px] grid-cols-1 gap-8 md:grid-cols-2">
+		<div class="grid w-full max-w-312 grid-cols-1 gap-8 md:grid-cols-2">
 			<div class="col-span-1 flex flex-col gap-2 md:col-span-2">
-				<img src="Milwaukee.png" class="h-[350px] w-full rounded-xl object-cover md:h-[460px]" />
+				<img src="Milwaukee.png" class="h-87.5 w-full rounded-xl object-cover md:h-115" alt="Milwaukee Skyline"/>
 				<div class="px-6">
 					<h3 class="text-xl font-bold text-slate-900">Milwaukee</h3>
 					<p class="text-lg font-medium text-slate-500">2024 - Present</p>
 				</div>
 			</div>
 			<div class="col-span-1 flex flex-col gap-2">
-				<img src="Provo.png" class="h-[350px] w-full rounded-xl object-cover md:h-[520px]" />
+				<img src="Provo.png" class="h-87.5 w-full rounded-xl object-cover md:h-130" alt="Provo Skyline"/>
 				<div class="px-6">
 					<h3 class="text-xl font-bold text-slate-900">Provo</h3>
 					<p class="text-lg font-medium text-slate-500">2000 - 2024</p>
 				</div>
 			</div>
 			<div class="col-span-1 flex flex-col gap-2">
-				<img src="San Diego.png" class="h-[350px] w-full rounded-xl object-cover md:h-[520px]" />
+				<img src="San Diego.png" class="h-87.5 w-full rounded-xl object-cover md:h-130" alt="San Diego Skyline"/>
 				<div class="px-6">
 					<h3 class="text-xl font-bold text-slate-900">San Diego</h3>
 					<p class="text-lg font-medium text-slate-500">1993 - 2000</p>

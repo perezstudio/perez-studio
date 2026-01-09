@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	
+
 	export let data: PageData;
 	$: ({ posts } = data);
-	
+
 	// Move the filtering logic to the script block
 	$: latestPost = posts[0];
 	$: otherPosts = posts.slice(1);
@@ -28,12 +28,12 @@
 		<!-- Latest Post -->
 		{#if latestPost}
 			<section class="mb-20">
-				<div class="bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl overflow-hidden shadow-xl">
+				<div class="bg-linear-to-r from-blue-600 to-purple-700 rounded-2xl overflow-hidden shadow-xl">
 					<div class="grid lg:grid-cols-2 gap-0">
 						{#if latestPost.coverImage}
 							<div class="aspect-video lg:aspect-auto bg-gray-200 overflow-hidden">
-								<img 
-									src={latestPost.coverImage} 
+								<img
+									src={latestPost.coverImage}
 									alt={latestPost.title}
 									class="w-full h-full object-cover"
 								/>
@@ -60,13 +60,13 @@
 							</p>
 							<div class="flex items-center justify-between">
 								<time class="text-blue-100">
-									{new Date(latestPost.date).toLocaleDateString('en-US', { 
-										year: 'numeric', 
-										month: 'long', 
-										day: 'numeric' 
+									{new Date(latestPost.date).toLocaleDateString('en-US', {
+										year: 'numeric',
+										month: 'long',
+										day: 'numeric'
 									})}
 								</time>
-								<a 
+								<a
 									href="/blog/{latestPost.slug}"
 									class="inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-medium"
 								>
@@ -88,8 +88,8 @@
 						<article class="group bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
 							{#if post.coverImage}
 								<div class="aspect-video bg-gray-200 overflow-hidden">
-									<img 
-										src={post.coverImage} 
+									<img
+										src={post.coverImage}
 										alt={post.title}
 										class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
 									/>
@@ -114,10 +114,10 @@
 									{post.description}
 								</p>
 								<time class="text-sm text-gray-500">
-									{new Date(post.date).toLocaleDateString('en-US', { 
-										year: 'numeric', 
-										month: 'long', 
-										day: 'numeric' 
+									{new Date(post.date).toLocaleDateString('en-US', {
+										year: 'numeric',
+										month: 'long',
+										day: 'numeric'
 									})}
 								</time>
 							</div>
@@ -144,10 +144,10 @@
 		bottom: 0;
 		z-index: 1;
 	}
-	
+
 	.line-clamp-3 {
 		display: -webkit-box;
-		-webkit-line-clamp: 3;
+		-line-clamp: 3;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 	}
