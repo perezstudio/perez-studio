@@ -24,22 +24,22 @@
 				<a href="/contact">
 					<Email className="w-8 fill-slate-500 hover:fill-cyan-500" />
 				</a>
-				<a href="#">
+				<a href="https://x.com/perezstudioio">
 					<Twitter className="w-8 fill-slate-500 hover:fill-cyan-500" />
 				</a>
-				<a href="#">
+				<a href="https://www.instagram.com/perezstudioio/">
 					<Instagram className="w-8 fill-slate-500 hover:fill-cyan-500" />
 				</a>
-				<a href="#">
+				<a href="https://dribbble.com/perezstudioio">
 					<Dribbble className="w-8 fill-slate-500 hover:fill-cyan-500" />
 				</a>
-				<a href="#">
+				<a href="https://www.behance.net/perezstudio">
 					<Behance className="w-8 fill-slate-500 hover:fill-cyan-500" />
 				</a>
-				<a href="#">
+				<a href="https://github.com/perezstudio">
 					<GitHub className="w-8 fill-slate-500 hover:fill-cyan-500" />
 				</a>
-				<a href="#">
+				<a href="https://www.linkedin.com/in/kevinperezut/">
 					<LinkedIn className="w-8 fill-slate-500 hover:fill-cyan-500" />
 				</a>
 			</div>
