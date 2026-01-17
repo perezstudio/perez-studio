@@ -24,56 +24,62 @@
 				<a
 					href="/contact"
 					aria-label="Contact me via email"
-					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
 				>
-					<Email className="w-6 fill-slate-500 group-hover:fill-cyan-500" />
+					<Email className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
 				</a>
 				<a
 					href="https://x.com/perezstudioio"
 					aria-label="Follow me on X (Twitter)"
-					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
 				>
-					<Twitter className="w-6 fill-slate-500" />
+					<Twitter className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
 				</a>
 				<a
 					href="https://www.instagram.com/perezstudioio/"
 					aria-label="Follow me on Instagram"
-					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
 				>
-					<Instagram className="w-6 fill-slate-500" />
+					<Instagram className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
 				</a>
 				<a
 					href="https://dribbble.com/perezstudioio"
 					aria-label="View my work on Dribbble"
-					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
 				>
-					<Dribbble className="w-6 fill-slate-500" />
+					<Dribbble className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
 				</a>
 				<a
 					href="https://www.behance.net/perezstudio"
 					aria-label="View my portfolio on Behance"
-					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
 				>
-					<Behance className="w-6 fill-slate-500" />
+					<Behance className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
 				</a>
 				<a
 					href="https://github.com/perezstudio"
 					aria-label="View my projects on GitHub"
-					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
 				>
-					<GitHub className="w-6 fill-slate-500" />
+					<GitHub className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
 				</a>
 				<a
 					href="https://www.linkedin.com/in/kevinperezut/"
 					aria-label="Connect with me on LinkedIn"
-					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
 				>
-					<LinkedIn className="w-6 fill-slate-500" />
+					<LinkedIn className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
 				</a>
 			</div>
 		</div>
-		<div class="flex w-full max-w-312 justify-center">
-			<img src="main-header.png" class="w-full rounded-xl bg-slate-100 object-cover" alt="banner graphic"/>
+		<div class="flex w-full max-w-312 justify-center md:px-6">
+			<img
+				src="/main-header.png"
+				class="w-full rounded-xl bg-slate-100 object-cover"
+				alt="Portfolio banner showcasing recent work"
+				loading="lazy"
+				decoding="async"
+			/>
 		</div>
 	</section>
 	<section class="flex w-full flex-col items-center gap-8 px-4 py-10">
@@ -110,26 +116,44 @@
 				</p>
 			</div>
 		</div>
-		<div class="grid w-full max-w-312 grid-cols-1 gap-8 md:grid-cols-2">
+		<div class="grid w-full max-w-312 grid-cols-1 gap-8 md:grid-cols-2 md:px-6">
 			<div class="col-span-1 flex flex-col gap-2 md:col-span-2">
-				<img src="Milwaukee.png" class="h-87.5 w-full rounded-xl object-cover md:h-115" alt="Milwaukee Skyline"/>
+				<img
+					src="/Milwaukee.png"
+					class="h-87.5 w-full rounded-xl object-cover md:h-115"
+					alt="Milwaukee Skyline"
+					loading="lazy"
+					decoding="async"
+				/>
 				<div class="px-6">
 					<h3 class="text-xl font-bold text-slate-900">Milwaukee</h3>
-					<p class="text-lg font-medium text-slate-500">2024 - Present</p>
+					<p class="text-lg font-medium text-slate-500">2024&nbsp;-&nbsp;Present</p>
 				</div>
 			</div>
 			<div class="col-span-1 flex flex-col gap-2">
-				<img src="Provo.png" class="h-87.5 w-full rounded-xl object-cover md:h-130" alt="Provo Skyline"/>
+				<img
+					src="/Provo.png"
+					class="h-87.5 w-full rounded-xl object-cover md:h-130"
+					alt="Provo Skyline"
+					loading="lazy"
+					decoding="async"
+				/>
 				<div class="px-6">
 					<h3 class="text-xl font-bold text-slate-900">Provo</h3>
-					<p class="text-lg font-medium text-slate-500">2000 - 2024</p>
+					<p class="text-lg font-medium text-slate-500">2000&nbsp;-&nbsp;2024</p>
 				</div>
 			</div>
 			<div class="col-span-1 flex flex-col gap-2">
-				<img src="San Diego.png" class="h-87.5 w-full rounded-xl object-cover md:h-130" alt="San Diego Skyline"/>
+				<img
+					src="/San Diego.png"
+					class="h-87.5 w-full rounded-xl object-cover md:h-130"
+					alt="San Diego Skyline"
+					loading="lazy"
+					decoding="async"
+				/>
 				<div class="px-6">
-					<h3 class="text-xl font-bold text-slate-900">San Diego</h3>
-					<p class="text-lg font-medium text-slate-500">1993 - 2000</p>
+					<h3 class="text-xl font-bold text-slate-900">San&nbsp;Diego</h3>
+					<p class="text-lg font-medium text-slate-500">1993&nbsp;-&nbsp;2000</p>
 				</div>
 			</div>
 		</div>

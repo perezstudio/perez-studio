@@ -46,10 +46,14 @@ After completing the code, ask the user if they want a playground link. Only cal
 ### 2. Visual Design
 #### Styling
 * Use semantic HTML elements
-* Use tailwindcss classes for styling
-* Responsive design using tailwindcss classes
-* Consistent spacing and padding
+* Use Tailwind CSS classes for styling - avoid custom CSS when Tailwind utilities exist
+* Use Tailwind's built-in shadow scale: `shadow-sm`, `shadow`, `shadow-md`, `shadow-lg`, `shadow-xl`, `shadow-2xl`
+* Use Tailwind's color palette (slate, gray, zinc, etc.) - avoid custom color variables
+* Responsive design using Tailwind breakpoints: `sm:`, `md:`, `lg:`, `xl:`, `2xl:`
+* Consistent spacing using Tailwind's spacing scale
 * Use ARIA attributes for interactive elements
+* Prefer Tailwind's transition utilities: `transition-colors`, `transition-transform`, `transition-shadow`, `duration-200`, `duration-300`
+* For hover states, combine multiple effects: `hover:shadow-lg hover:-translate-y-1 hover:border-slate-300`
 
 #### Layout
 * Optical alignment. Adjust ±1px when perception beats geometry.
@@ -105,8 +109,8 @@ Semantics before ARIA. Prefer native elements (button, a, label, table), before 
 * Windows <select> background. Explicitly set background-color & color on native <select> to avoid dark-mode contrast bugs on Windows.
 
 #### Design
-* Layered shadows. Mimic ambient + direct light with at least two layers.
-* Crisp borders. Combine borders & shadows; semi-transparent borders improve edge clarity.
+* Layered shadows. Use Tailwind's shadow scale (`shadow-md`, `shadow-lg`, `shadow-xl`) which already provide layered depth. Combine with `hover:shadow-xl` for interactive elevation.
+* Crisp borders. Combine Tailwind borders (`border`, `border-slate-200`) with shadows; use `border-opacity-50` for semi-transparent borders.
 * Nested radii. Child radius ≤ parent radius & concentric so curves align.
 * Hue consistency. On non-neutral backgrounds, tint borders/shadows/text toward the same hue.
 * Accessible charts. Use color-blind-friendly palettes.
