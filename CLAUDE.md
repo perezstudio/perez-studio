@@ -22,7 +22,9 @@ You MUST use this tool whenever writing Svelte code before sending it to the use
 Generates a Svelte Playground link with the provided code.
 After completing the code, ask the user if they want a playground link. Only call this tool after user confirmation and NEVER if code was written to files in their project.
 
-### 5. Accessibility (WCAG 2.1)
+## Interface Guidelines
+
+### 1. Accessibility (WCAG 2.1)
 #### Critical
 * Images without alt text
 * Icon-only buttons missing aria-labels
@@ -41,7 +43,7 @@ After completing the code, ask the user if they want a playground link. Only cal
 * Missing ARIA roles
 * Incorrect ARIA roles
 
-### 6. Visual Design
+### 2. Visual Design
 #### Styling
 * Use semantic HTML elements
 * Use tailwindcss classes for styling
