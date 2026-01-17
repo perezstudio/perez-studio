@@ -51,7 +51,7 @@
 			>
 				{#if mobileMenuOpen}
 					<!-- Close icon (X) -->
-					<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
@@ -61,7 +61,7 @@
 					</svg>
 				{:else}
 					<!-- Hamburger icon -->
-					<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"

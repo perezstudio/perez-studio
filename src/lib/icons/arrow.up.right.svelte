@@ -8,6 +8,7 @@
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	class={className}
+	aria-hidden="true"
 >
 	<g id="Symbols" stroke-width="1" fill-rule="evenodd">
 		<g id="Link-Card" transform="translate(-154, -32)" fill-rule="nonzero">

@@ -20,27 +20,55 @@
 					reflecting my commitment to seamless functionality and aesthetic appeal.
 				</p>
 			</div>
-			<div class="flex flex-row items-center gap-2">
-				<a href="/contact">
-					<Email className="w-8 fill-slate-500 hover:fill-cyan-500" />
+			<div class="flex flex-row items-center gap-1">
+				<a
+					href="/contact"
+					aria-label="Contact me via email"
+					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+				>
+					<Email className="w-6 fill-slate-500 group-hover:fill-cyan-500" />
 				</a>
-				<a href="https://x.com/perezstudioio">
-					<Twitter className="w-8 fill-slate-500 hover:fill-cyan-500" />
+				<a
+					href="https://x.com/perezstudioio"
+					aria-label="Follow me on X (Twitter)"
+					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+				>
+					<Twitter className="w-6 fill-slate-500" />
 				</a>
-				<a href="https://www.instagram.com/perezstudioio/">
-					<Instagram className="w-8 fill-slate-500 hover:fill-cyan-500" />
+				<a
+					href="https://www.instagram.com/perezstudioio/"
+					aria-label="Follow me on Instagram"
+					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+				>
+					<Instagram className="w-6 fill-slate-500" />
 				</a>
-				<a href="https://dribbble.com/perezstudioio">
-					<Dribbble className="w-8 fill-slate-500 hover:fill-cyan-500" />
+				<a
+					href="https://dribbble.com/perezstudioio"
+					aria-label="View my work on Dribbble"
+					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+				>
+					<Dribbble className="w-6 fill-slate-500" />
 				</a>
-				<a href="https://www.behance.net/perezstudio">
-					<Behance className="w-8 fill-slate-500 hover:fill-cyan-500" />
+				<a
+					href="https://www.behance.net/perezstudio"
+					aria-label="View my portfolio on Behance"
+					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+				>
+					<Behance className="w-6 fill-slate-500" />
 				</a>
-				<a href="https://github.com/perezstudio">
-					<GitHub className="w-8 fill-slate-500 hover:fill-cyan-500" />
+				<a
+					href="https://github.com/perezstudio"
+					aria-label="View my projects on GitHub"
+					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+				>
+					<GitHub className="w-6 fill-slate-500" />
 				</a>
-				<a href="https://www.linkedin.com/in/kevinperezut/">
-					<LinkedIn className="w-8 fill-slate-500 hover:fill-cyan-500" />
+				<a
+					href="https://www.linkedin.com/in/kevinperezut/"
+					aria-label="Connect with me on LinkedIn"
+					class="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-slate-100"
+				>
+					<LinkedIn className="w-6 fill-slate-500" />
 				</a>
 			</div>
 		</div>
@@ -63,12 +91,12 @@
 			<LinkBlock
 				link="/newsletter"
 				title="Newsletter"
-				paragraph="I'm currently working on Build UI, a subscription video site for frontend developers."
+				paragraph="Subscribe to get updates on new projects, tutorials, and insights about frontend development and design."
 			/>
 			<LinkBlock
 				link="/contact"
 				title="Contact Me"
-				paragraph="I'm currently working on Build UI, a subscription video site for frontend developers."
+				paragraph="Have a project in mind or want to collaborate? I'd love to hear from you. Let's create something great together."
 			/>
 		</div>
 	</section>
