@@ -39,7 +39,7 @@
 						<li>
 							<a
 								href={link.href}
-								class="text-slate-600 transition-colors hover:text-slate-900"
+								class="rounded-lg px-4 py-2 text-slate-600 transition-all duration-200 hover:bg-slate-200 hover:text-slate-900"
 							>
 								{link.label}
 							</a>
@@ -64,7 +64,7 @@
 		</div>
 
 		<!-- Bottom section with copyright -->
-		<div class="flex flex-col gap-4 border-t border-slate-200 pt-8 md:flex-row md:items-center md:justify-between">
+		<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 			<p class="text-sm text-slate-500">
 				&copy; {currentYear} Perez&nbsp;Studio. All rights reserved.
 			</p>
