@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { tools, getFeaturedTools } from '$lib/data/tools.js';
-	import { experiences, education, certifications, awards } from '$lib/data/about.js';
+	import { companies, education, certifications, awards, calculateDuration, calculateCompanyDuration } from '$lib/data/about.js';
 
 	const featuredTools = getFeaturedTools();
 	const otherTools = tools.filter(t => !t.featured).slice(0, 6);
@@ -49,23 +49,57 @@
 				<div class="absolute left-6 top-0 hidden h-full w-0.5 bg-slate-300 md:block"></div>
 
 				<div class="flex flex-col gap-6">
-					{#each experiences as exp, i (exp.company + exp.startDate)}
+					{#each companies as company (company.name)}
 						<div class="group relative flex gap-6">
 							<!-- Timeline dot -->
 							<div class="relative z-10 hidden h-12 w-12 flex-shrink-0 items-center justify-center md:flex">
 								<div class="h-4 w-4 rounded-full border-4 border-slate-300 bg-white transition-colors duration-300 group-hover:border-cyan-500 group-hover:bg-cyan-500"></div>
 							</div>
-							<!-- Card -->
-							<div class="flex-1 rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg">
-								<div class="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-100">
-									<svg class="h-6 w-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-									</svg>
+							<!-- Company Card -->
+							<div class="flex-1 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg">
+								<!-- Company Header -->
+								<div class="flex items-center gap-4 border-b border-slate-100 p-6">
+									{#if company.logo}
+										<img
+											src={company.logo}
+											alt="{company.name} logo"
+											class="h-12 w-12 rounded-lg object-contain"
+											loading="lazy"
+											decoding="async"
+										/>
+									{:else}
+										<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-100">
+											<svg class="h-6 w-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+											</svg>
+										</div>
+									{/if}
+									<div class="flex-1">
+										<h3 class="text-lg font-bold text-slate-900">{company.name}</h3>
+									</div>
+									<span class="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600">
+										{calculateCompanyDuration(company.jobs)}
+									</span>
 								</div>
-								<h3 class="text-lg font-bold text-slate-900">{exp.role}</h3>
-								<p class="text-slate-600">{exp.company}</p>
-								<p class="mt-2 text-sm text-slate-500">{exp.description}</p>
-								<p class="mt-2 text-sm font-medium text-slate-400">{exp.startDate}&nbsp;-&nbsp;{exp.endDate}</p>
+								<!-- Jobs List -->
+								<div class="divide-y divide-slate-100">
+									{#each company.jobs as job, jobIndex (job.role + job.startDate)}
+										<div class="p-6">
+											<div class="flex flex-wrap items-start justify-between gap-2">
+												<h4 class="font-semibold text-slate-900">{job.role}</h4>
+												<span class="text-sm text-slate-500">{job.startDate}&nbsp;-&nbsp;{job.endDate}</span>
+											</div>
+											<div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+												<span class="text-sm text-slate-400">{job.location}</span>
+												<span class="hidden text-slate-300 sm:inline">|</span>
+												<span class="text-sm font-medium text-slate-500">{calculateDuration(job.startDate, job.endDate)}</span>
+											</div>
+											{#if job.description}
+												<p class="mt-2 text-sm text-slate-600">{job.description}</p>
+											{/if}
+										</div>
+									{/each}
+								</div>
 							</div>
 						</div>
 					{/each}
