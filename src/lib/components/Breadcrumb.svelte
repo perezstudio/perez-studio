@@ -25,17 +25,15 @@
 				{#if item.href}
 					<a
 						href={item.href}
-						class="group inline-flex items-center gap-1 transition-colors hover:text-cyan-500"
+						class="group inline-flex items-baseline gap-1 transition-colors hover:text-cyan-500"
 					>
 						{#if item.icon}
 							<svelte:component
 								this={item.icon}
-								className="w-4 h-4 fill-slate-500 transition-colors group-hover:fill-cyan-500"
+								className="w-3.5 h-3.5 fill-slate-500 transition-colors group-hover:fill-cyan-500 relative top-0.5"
 							/>
 						{/if}
-						{#if !item.icon}
-							{item.label}
-						{/if}
+						{item.label}
 					</a>
 				{:else}
 					<span class="text-slate-700">{item.label}</span>

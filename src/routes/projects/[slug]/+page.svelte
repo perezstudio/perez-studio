@@ -60,7 +60,7 @@
 	{#if project.coverImage}
 		<section class="flex w-full justify-center lg:px-4">
 			<div class="max-h-115 w-full max-w-312 overflow-hidden bg-gray-200 lg:rounded-xl">
-				<img src={project.coverImage} alt={project.title} class="h-full w-full object-cover" />
+				<img src={project.coverImage} alt={project.title} class="h-full w-full object-cover object-top" />
 			</div>
 		</section>
 	{/if}
