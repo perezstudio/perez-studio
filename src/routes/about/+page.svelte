@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { tools, getFeaturedTools } from '$lib/data/tools.js';
-	import { companies, education, certifications, awards, calculateDuration, calculateCompanyDuration } from '$lib/data/about.js';
+	import { companies, education, certifications, calculateDuration, calculateCompanyDuration } from '$lib/data/about.js';
 
 	const featuredTools = getFeaturedTools();
 	const otherTools = tools.filter(t => !t.featured).slice(0, 6);
@@ -148,31 +148,7 @@
 		</div>
 	</section>
 
-	<!-- Awards Section -->
-	<section class="flex w-full flex-col items-center gap-8 px-4 py-16 bg-slate-50">
-		<div class="flex w-full max-w-312 flex-col gap-8 md:px-6">
-			<h2 class="text-4xl font-extrabold text-slate-900">Awards</h2>
-			<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-				{#each awards as award (award.name + award.year)}
-					<div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-						<div class="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-100">
-							<svg class="h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-							</svg>
-						</div>
-						<h3 class="text-lg font-bold text-slate-900">{award.name}</h3>
-						<p class="text-slate-600">{award.organization}</p>
-						{#if award.description}
-							<p class="mt-2 text-sm text-slate-500">{award.description}</p>
-						{/if}
-						<p class="mt-2 text-sm font-medium text-slate-400">{award.year}</p>
-					</div>
-				{/each}
-			</div>
-		</div>
-	</section>
-
-	<!-- Tools & Technologies Section -->
+<!-- Tools & Technologies Section -->
 	<section class="flex w-full flex-col items-center gap-8 px-4 py-16">
 		<div class="flex w-full max-w-312 flex-col gap-8 md:px-6">
 			<div class="flex flex-col gap-2">
@@ -194,14 +170,6 @@
 									src={tool.logo}
 									alt="{tool.name} logo"
 									class="h-20 w-20 object-contain drop-shadow-md"
-									loading="lazy"
-									decoding="async"
-								/>
-							{:else if tool.icon}
-								<img
-									src={tool.icon}
-									alt="{tool.name} icon"
-									class="h-16 w-16 object-contain"
 									loading="lazy"
 									decoding="async"
 								/>

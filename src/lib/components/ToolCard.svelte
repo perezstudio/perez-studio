@@ -1,198 +1,89 @@
 <script lang="ts">
   import type { Tool } from '$lib/types/tools.js';
-  
-  export let tool: Tool;
-  export let projectCount: number = 0;
-  export let showProjectCount: boolean = true;
-  export let size: 'small' | 'medium' | 'large' = 'medium';
+
+  let {
+    tool,
+    projectCount = 0,
+    showProjectCount = true,
+    size = 'medium'
+  }: {
+    tool: Tool;
+    projectCount?: number;
+    showProjectCount?: boolean;
+    size?: 'small' | 'medium' | 'large';
+  } = $props();
+
+  const sizeClasses = {
+    small: 'p-4',
+    medium: 'p-6',
+    large: 'p-8'
+  };
+
+  const logoSizes = {
+    small: 'w-8 h-8',
+    medium: 'w-12 h-12',
+    large: 'w-16 h-16'
+  };
+
+  const nameSizes = {
+    small: 'text-lg',
+    medium: 'text-xl',
+    large: 'text-2xl'
+  };
 </script>
 
-<a 
-  href="/tools/{tool.slug}" 
-  class="tool-card tool-card--{size}"
-  style="--tool-color: {tool.color || '#6b7280'}"
+<a
+  href="/tools/{tool.slug}"
+  class="group block no-underline text-inherit bg-white rounded-xl border border-slate-200 {sizeClasses[size]} transition-all duration-200 relative overflow-hidden hover:-translate-y-0.5 hover:shadow-lg hover:border-slate-300"
 >
-  <div class="tool-icon">
+  <div
+    class="absolute top-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+    style="background-color: {tool.color || '#6b7280'}"
+  ></div>
+
+  <div class="mb-4">
     {#if tool.logo}
-      <img src={tool.logo} alt="{tool.name} logo" class="tool-logo" />
-    {:else if tool.icon}
-      <img src={tool.icon} alt="{tool.name} icon" class="tool-icon-img" />
+      <img
+        src={tool.logo}
+        alt="{tool.name} logo"
+        class="{logoSizes[size]} object-contain drop-shadow-sm"
+      />
     {:else}
-      <div class="tool-icon-fallback">
+      <div
+        class="{logoSizes[size]} rounded-lg flex items-center justify-center font-semibold text-xl text-white"
+        style="background-color: {tool.color || '#6b7280'}"
+      >
         {tool.name.charAt(0)}
       </div>
     {/if}
   </div>
-  
-  <div class="tool-content">
-    <h3 class="tool-name">{tool.name}</h3>
-    <p class="tool-description">{tool.description}</p>
-    
+
+  <div>
+    <h3 class="{nameSizes[size]} font-semibold text-slate-900 mb-2">{tool.name}</h3>
+    <p class="text-sm text-slate-500 leading-relaxed mb-4">{tool.description}</p>
+
     {#if tool.tags && tool.tags.length > 0}
-      <div class="tool-tags">
-        {#each tool.tags.slice(0, 3) as tag}
-          <span class="tag">{tag}</span>
+      <div class="flex flex-wrap gap-2 mb-4">
+        {#each tool.tags.slice(0, 3) as tag (tag)}
+          <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded text-xs font-medium"
+            >{tag}</span
+          >
         {/each}
       </div>
     {/if}
-    
+
     {#if showProjectCount && projectCount > 0}
-      <div class="project-count">
+      <div class="text-sm font-medium" style="color: {tool.color || '#6b7280'}">
         {projectCount} project{projectCount !== 1 ? 's' : ''}
       </div>
     {/if}
   </div>
-  
+
   {#if tool.featured}
-    <div class="featured-badge">Featured</div>
+    <div
+      class="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-amber-500 text-white px-2 py-1 rounded text-xs font-semibold uppercase tracking-wide"
+    >
+      Featured
+    </div>
   {/if}
 </a>
-
-<style>
-  .tool-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    background: white;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
-    padding: 1.5rem;
-    transition: all 0.2s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .tool-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    border-color: var(--tool-color);
-  }
-  
-  .tool-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--tool-color);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-  }
-  
-  .tool-card:hover::before {
-    opacity: 1;
-  }
-  
-  .tool-card--small {
-    padding: 1rem;
-  }
-  
-  .tool-card--large {
-    padding: 2rem;
-  }
-  
-  .tool-icon {
-    margin-bottom: 1rem;
-  }
-  
-  .tool-logo {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-  }
-  
-  .tool-icon-img {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-  }
-  
-  .tool-card--small .tool-logo,
-  .tool-card--small .tool-icon-img {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .tool-card--large .tool-logo,
-  .tool-card--large .tool-icon-img {
-    width: 64px;
-    height: 64px;
-  }
-  
-  .tool-icon-fallback {
-    width: 48px;
-    height: 48px;
-    background: var(--tool-color);
-    color: white;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 1.5rem;
-  }
-  
-  .tool-name {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #111827;
-  }
-  
-  .tool-card--small .tool-name {
-    font-size: 1.125rem;
-  }
-  
-  .tool-card--large .tool-name {
-    font-size: 1.5rem;
-  }
-  
-  .tool-description {
-    margin: 0 0 1rem 0;
-    color: #6b7280;
-    font-size: 0.875rem;
-    line-height: 1.5;
-  }
-  
-  .tool-card--small .tool-description {
-    font-size: 0.8125rem;
-  }
-  
-  .tool-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .tag {
-    background: #f3f4f6;
-    color: #374151;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-  
-  .project-count {
-    color: var(--tool-color);
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-  
-  .featured-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: linear-gradient(135deg, #fbbf24, #f59e0b);
-    color: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.025em;
-  }
-</style>

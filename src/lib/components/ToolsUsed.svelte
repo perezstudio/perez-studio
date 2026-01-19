@@ -48,12 +48,6 @@
                   alt="{tool.name} logo"
                   class="w-24 h-24 object-contain drop-shadow-lg"
                 />
-              {:else if tool.icon}
-                <img
-                  src={tool.icon}
-                  alt="{tool.name} icon"
-                  class="w-20 h-20 object-contain"
-                />
               {:else}
                 <div
                   class="w-20 h-20 rounded-xl flex items-center justify-center font-bold text-2xl text-white"
@@ -105,12 +99,6 @@
                   src={tool.logo}
                   alt="{tool.name} logo"
                   class="w-20 h-20 object-contain drop-shadow-md"
-                />
-              {:else if tool.icon}
-                <img
-                  src={tool.icon}
-                  alt="{tool.name} icon"
-                  class="w-16 h-16 object-contain"
                 />
               {:else}
                 <div

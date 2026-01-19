@@ -13,28 +13,20 @@ demoButtonText: "Visit Website"
 
 <script>
   import ToolsUsed from '$lib/components/ToolsUsed.svelte';
-  
-  const projectTools = [
-	{
-	  slug: 'webflow',
-	  name: 'Webflow',
-	  logo: '/images/tools/webflow-logo.png',
-	  description: 'Full-stack framework for blazing fast performance',
-	  featured: true,
-	  category: 'frontend',
-	  role: 'Primary framework for the entire website',
-	  color: '#ff3e00'
-	}
-  ];
+  import { getProjectTools } from '$lib/data/tools';
+
+  const projectTools = getProjectTools([
+    { slug: 'webflow', role: 'Primary framework for the entire website', featured: true }
+  ]);
 </script>
 
 # Contest Every Race Website: Building a Scalable Platform for Grassroots Democracy
 
-As part of the Contest Every Race branding initiative, designed in collaboration with Studio Lake, I was tasked with bringing the new digital vision to life through a robust and flexible website. My goal was to translate the brand’s mission—making Democrats competitive in every race—into a digital experience that empowers both the Contest Every Race and Movement Labs teams to communicate, organize, and mobilize more effectively.
+As part of the Contest Every Race branding initiative, designed in collaboration with Studio Lake, I was tasked with bringing the new digital vision to life through a robust and flexible website. My goal was to translate the brand's mission—making Democrats competitive in every race—into a digital experience that empowers both the Contest Every Race and Movement Labs teams to communicate, organize, and mobilize more effectively.
 
 ## Design Meets Functionality
 
-Studio Lake’s refreshed branding provided a strong visual and strategic foundation. My role was to ensure that the website not only reflected this new identity but also served as a powerful tool for internal teams. Using Webflow, I built the site from the ground up, leveraging its components system to create a library of reusable elements. These components—ranging from hero banners and program highlights to impact stats and testimonial sections—allow the communications teams to easily create, update, and modify pages without the need for ongoing development support.
+Studio Lake's refreshed branding provided a strong visual and strategic foundation. My role was to ensure that the website not only reflected this new identity but also served as a powerful tool for internal teams. Using Webflow, I built the site from the ground up, leveraging its components system to create a library of reusable elements. These components—ranging from hero banners and program highlights to impact stats and testimonial sections—allow the communications teams to easily create, update, and modify pages without the need for ongoing development support.
 
 ## Empowering Content Creators
 

@@ -130,47 +130,49 @@ export function calculateCompanyDuration(jobs: Job[]): string {
 
 export const companies: Company[] = [
 	{
-		name: 'Civics Lab',
-		logo: '/images/companies/civics-lab.png',
+		name: 'Movement Labs',
+		logo: '/images/companies/movementlabs-icon.png',
 		jobs: [
 			{
-				role: 'Founder & Lead Developer',
-				startDate: 'Jan 2023',
+				role: 'UI/UX Engineer',
+				startDate: 'Mar 2023',
 				endDate: 'Present',
 				location: 'Milwaukee, WI',
+				description:
+					'Building a suite of tools and resources designed for political campaigns and political parties.'
+			},
+			{
+				role: 'Operations Associate',
+				startDate: 'Nov 2021',
+				endDate: 'Mar 2023',
+				location: 'American Fork, UT',
 				description:
 					'Building a suite of tools and resources designed for political campaigns and political parties.'
 			}
 		]
 	},
 	{
-		name: 'Freelance',
+		name: 'Reparadise',
+		logo: '/images/companies/reparadise-icon.png',
 		jobs: [
 			{
-				role: 'Senior Frontend Developer',
-				startDate: 'Jun 2021',
-				endDate: 'Dec 2022',
-				location: 'Remote',
+				role: 'Office Manager',
+				startDate: 'Jan 2021',
+				endDate: 'Nov 2021',
+				location: 'Salt Lake City, UT',
 				description:
 					'Worked with various clients to build modern web applications using React, Svelte, and Next.js.'
-			},
-			{
-				role: 'Frontend Developer',
-				startDate: 'Jan 2020',
-				endDate: 'May 2021',
-				location: 'Remote',
-				description:
-					'Specialized in responsive design and performance optimization for client projects.'
 			}
 		]
 	},
 	{
-		name: 'Tech Startup',
+		name: 'Inclan Communications',
+		logo: '/images/companies/inclaninteractive-icon.png',
 		jobs: [
 			{
-				role: 'Frontend Developer',
-				startDate: 'Mar 2018',
-				endDate: 'Dec 2019',
+				role: 'Project Manager',
+				startDate: 'Oct 2015',
+				endDate: 'Jul 2020',
 				location: 'Provo, UT',
 				description:
 					'Developed and maintained customer-facing web applications. Collaborated with design and backend teams.'
@@ -178,13 +180,14 @@ export const companies: Company[] = [
 		]
 	},
 	{
-		name: 'Digital Agency',
+		name: 'Avval Software',
+		logo: '/images/companies/avvalsoftware-icon.png',
 		jobs: [
 			{
-				role: 'Junior Developer',
-				startDate: 'Jun 2016',
-				endDate: 'Feb 2018',
-				location: 'Provo, UT',
+				role: 'Founder',
+				startDate: 'Nov 2013',
+				endDate: 'Jul 2015',
+				location: 'Salt Lake City, UT',
 				description: 'Started career building websites and web applications for small businesses.'
 			}
 		]
@@ -193,23 +196,34 @@ export const companies: Company[] = [
 
 export const education: Education[] = [
 	{
-		institution: 'University of Utah',
+		institution: 'Utah Valley University',
+		degree: 'Associate of Science',
+		field: 'Graphic Design',
+		year: '2011'
+	},
+	{
+		institution: 'Utah Valley University',
 		degree: 'Bachelor of Science',
 		field: 'Computer Science',
-		year: '2016'
+		year: '2013'
 	}
 ];
 
 export const certifications: Certification[] = [
 	{
-		name: 'AWS Certified Developer',
-		issuer: 'Amazon Web Services',
-		year: '2022'
+		name: 'Data Analytics',
+		issuer: 'Snow College',
+		year: '2020'
 	},
 	{
 		name: 'Google UX Design Certificate',
 		issuer: 'Google',
-		year: '2021'
+		year: '2026'
+	},
+	{
+		name: 'Certified Associate of Project Management',
+		issuer: 'Project Management Institute',
+		year: '2026'
 	}
 ];
 
