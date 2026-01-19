@@ -7,6 +7,7 @@
 	import Behance from '$lib/icons/behance.svelte';
 	import GitHub from '$lib/icons/github.svelte';
 	import LinkedIn from '$lib/icons/linkedin.svelte';
+	import ArrowUp from '$lib/icons/arrow.up.right.svelte';
 </script>
 
 <div>
@@ -114,6 +115,15 @@
 					Born in sunny San Diego, CA, I moved to Provo, Utah at an early age. After 20 years I
 					decided to relocate to Milwaukee, Wisconsin.
 				</p>
+				<a
+					href="/about"
+					class="group inline-flex items-center gap-1 font-medium text-cyan-500 transition-colors duration-300 hover:text-cyan-600"
+				>
+					Learn More About Me
+					<ArrowUp
+						className="w-3.5 fill-cyan-500 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:fill-cyan-600"
+					/>
+				</a>
 			</div>
 		</div>
 		<div class="grid w-full max-w-312 grid-cols-1 gap-8 md:grid-cols-2 md:px-6">
