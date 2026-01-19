@@ -11,7 +11,7 @@
 </script>
 
 <a href={link} class="group block">
-	<div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg">
+	<div class="rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-slate-100 hover:shadow-lg">
 		<div class="flex items-start justify-between gap-4">
 			<div class="flex flex-col gap-2">
 				<h2 class="text-3xl font-extrabold text-slate-900">{title}</h2>

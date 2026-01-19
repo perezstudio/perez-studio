@@ -15,18 +15,6 @@ export const tools: Tool[] = [
 		tags: ['reactive', 'compiler', 'lightweight']
 	},
 	{
-		slug: 'react',
-		name: 'React',
-		description: 'A JavaScript library for building user interfaces',
-		logo: '/images/tools/react-logo.png',
-		category: 'frontend',
-		website: 'https://react.dev',
-		documentation: 'https://react.dev/learn',
-		featured: true,
-		color: '#61dafb',
-		tags: ['components', 'virtual-dom', 'hooks']
-	},
-	{
 		slug: 'nextjs',
 		name: 'Next.js',
 		description: 'React framework with hybrid static & server rendering',
@@ -75,17 +63,6 @@ export const tools: Tool[] = [
 		color: '#000000',
 		tags: ['middleware', 'routing', 'minimal']
 	},
-	{
-		slug: 'fastify',
-		name: 'Fastify',
-		description: 'Fast and low overhead web framework for Node.js',
-		logo: '/images/tools/fastify-logo.png',
-		category: 'backend',
-		website: 'https://www.fastify.io',
-		documentation: 'https://www.fastify.io/docs/latest/',
-		color: '#000000',
-		tags: ['performance', 'json-schema', 'typescript']
-	},
 
 	// Database
 	{
@@ -133,6 +110,18 @@ export const tools: Tool[] = [
 		category: 'design',
 		website: 'https://www.figma.com',
 		documentation: 'https://help.figma.com',
+		featured: true,
+		color: '#f24e1e',
+		tags: ['design', 'prototyping', 'collaboration']
+	},
+	{
+		slug: 'sketch',
+		name: 'Sketch',
+		description: 'MacOS user interface design tool',
+		logo: '/images/tools/sketch-logo.png',
+		category: 'design',
+		website: 'https://www.sketch.com',
+		documentation: 'https://help.sketch.com',
 		featured: true,
 		color: '#f24e1e',
 		tags: ['design', 'prototyping', 'collaboration']

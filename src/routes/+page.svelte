@@ -117,10 +117,10 @@
 			</div>
 		</div>
 		<div class="grid w-full max-w-312 grid-cols-1 gap-8 md:grid-cols-2 md:px-6">
-			<div class="col-span-1 flex flex-col gap-2 md:col-span-2">
+			<div class="group col-span-1 flex flex-col gap-2 md:col-span-2">
 				<img
 					src="/Milwaukee.png"
-					class="h-87.5 w-full rounded-xl object-cover md:h-115"
+					class="h-87.5 w-full rounded-xl object-cover transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg md:h-115"
 					alt="Milwaukee Skyline"
 					loading="lazy"
 					decoding="async"
@@ -130,10 +130,10 @@
 					<p class="text-lg font-medium text-slate-500">2024&nbsp;-&nbsp;Present</p>
 				</div>
 			</div>
-			<div class="col-span-1 flex flex-col gap-2">
+			<div class="group col-span-1 flex flex-col gap-2">
 				<img
 					src="/Provo.png"
-					class="h-87.5 w-full rounded-xl object-cover md:h-130"
+					class="h-87.5 w-full rounded-xl object-cover transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg md:h-130"
 					alt="Provo Skyline"
 					loading="lazy"
 					decoding="async"
@@ -143,10 +143,10 @@
 					<p class="text-lg font-medium text-slate-500">2000&nbsp;-&nbsp;2024</p>
 				</div>
 			</div>
-			<div class="col-span-1 flex flex-col gap-2">
+			<div class="group col-span-1 flex flex-col gap-2">
 				<img
 					src="/San Diego.png"
-					class="h-87.5 w-full rounded-xl object-cover md:h-130"
+					class="h-87.5 w-full rounded-xl object-cover transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg md:h-130"
 					alt="San Diego Skyline"
 					loading="lazy"
 					decoding="async"
