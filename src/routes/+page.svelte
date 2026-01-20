@@ -28,10 +28,13 @@
 				{/each}
 			</div>
 		</div>
-		<div class="flex w-full max-w-312 justify-center md:px-6">
+	</section>
+	<!-- Banner Image -->
+	<section class="flex w-full justify-center pb-10 lg:px-4">
+		<div class="w-full max-w-312 overflow-hidden bg-slate-100 lg:rounded-xl">
 			<img
 				src="/main-header.png"
-				class="w-full rounded-xl bg-slate-100 object-cover"
+				class="w-full object-cover"
 				alt="Portfolio banner showcasing recent work"
 				loading="lazy"
 				decoding="async"
@@ -81,42 +84,55 @@
 				</a>
 			</div>
 		</div>
-		<div class="grid w-full max-w-312 grid-cols-1 gap-8 md:grid-cols-2 md:px-6">
-			<div class="group col-span-1 flex flex-col gap-2 md:col-span-2">
+	</section>
+	<!-- My Life Images -->
+	<section class="flex w-full flex-col items-center gap-8 pb-10 lg:px-4">
+		<!-- Milwaukee (full width) -->
+		<div class="group flex w-full max-w-312 flex-col gap-2">
+			<div class="h-87.5 w-full overflow-hidden bg-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg md:h-115 lg:rounded-xl">
 				<img
 					src="/Milwaukee.png"
-					class="h-87.5 w-full rounded-xl object-cover transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg md:h-115"
+					class="h-full w-full object-cover"
 					alt="Milwaukee Skyline"
 					loading="lazy"
 					decoding="async"
 				/>
-				<div class="px-6">
-					<h3 class="text-xl font-bold text-slate-900">Milwaukee</h3>
-					<p class="text-lg font-medium text-slate-500">2024&nbsp;-&nbsp;Present</p>
-				</div>
 			</div>
-			<div class="group col-span-1 flex flex-col gap-2">
-				<img
-					src="/Provo.png"
-					class="h-87.5 w-full rounded-xl object-cover transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg md:h-130"
-					alt="Provo Skyline"
-					loading="lazy"
-					decoding="async"
-				/>
-				<div class="px-6">
+			<div class="px-4 md:px-6">
+				<h3 class="text-xl font-bold text-slate-900">Milwaukee</h3>
+				<p class="text-lg font-medium text-slate-500">2024&nbsp;-&nbsp;Present</p>
+			</div>
+		</div>
+		<!-- Provo & San Diego (two columns on lg, single column otherwise) -->
+		<div class="grid w-full max-w-312 grid-cols-1 gap-8 lg:grid-cols-2">
+			<!-- Provo -->
+			<div class="group flex flex-col gap-2">
+				<div class="h-87.5 w-full overflow-hidden bg-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg md:h-130 lg:rounded-xl">
+					<img
+						src="/Provo.png"
+						class="h-full w-full object-cover"
+						alt="Provo Skyline"
+						loading="lazy"
+						decoding="async"
+					/>
+				</div>
+				<div class="px-4 md:px-6">
 					<h3 class="text-xl font-bold text-slate-900">Provo</h3>
 					<p class="text-lg font-medium text-slate-500">2000&nbsp;-&nbsp;2024</p>
 				</div>
 			</div>
-			<div class="group col-span-1 flex flex-col gap-2">
-				<img
-					src="/San Diego.png"
-					class="h-87.5 w-full rounded-xl object-cover transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg md:h-130"
-					alt="San Diego Skyline"
-					loading="lazy"
-					decoding="async"
-				/>
-				<div class="px-6">
+			<!-- San Diego -->
+			<div class="group flex flex-col gap-2">
+				<div class="h-87.5 w-full overflow-hidden bg-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg md:h-130 lg:rounded-xl">
+					<img
+						src="/San Diego.png"
+						class="h-full w-full object-cover"
+						alt="San Diego Skyline"
+						loading="lazy"
+						decoding="async"
+					/>
+				</div>
+				<div class="px-4 md:px-6">
 					<h3 class="text-xl font-bold text-slate-900">San&nbsp;Diego</h3>
 					<p class="text-lg font-medium text-slate-500">1993&nbsp;-&nbsp;2000</p>
 				</div>
