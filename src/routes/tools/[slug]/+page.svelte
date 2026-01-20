@@ -1,372 +1,186 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import ProjectCard from '$lib/components/ProjectCard.svelte';
-  import ToolCard from '$lib/components/ToolCard.svelte';
-  import { tools } from '$lib/data/tools.js';
-  import { getRelatedTools } from '$lib/types/tools.js';
-  import type { PageData } from './$types';
+	import type { PageData } from './$types';
+	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
+	import Home from '$lib/icons/home.svelte';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
-  export let data: PageData;
-
-  $: ({ tool, projects, projectCount } = data);
-
-  // Get related tools (tools that appear in the same projects)
-  $: relatedTools = getRelatedTools(projects, tool.slug);
-
-  // Get other tools from the same category
-  $: categoryTools = tools
-    .filter(t => t.category === tool.category && t.slug !== tool.slug)
-    .slice(0, 4);
+	let { data }: { data: PageData } = $props();
+	let tool = $derived(data.tool);
+	let projects = $derived(data.projects);
+	let projectCount = $derived(data.projectCount);
 </script>
 
 <svelte:head>
-  <title>{tool.name} - Tools - Perez Studio</title>
-  <meta name="description" content="{tool.description} - See projects where I've used {tool.name}." />
+	<title>{tool.name} | Tools | Perez Studio</title>
+	<meta name="description" content="{tool.description} - See projects where I've used {tool.name}." />
+	<meta property="og:title" content={tool.name} />
+	<meta property="og:description" content={tool.description} />
+	{#if tool.banner}
+		<meta property="og:image" content={tool.banner} />
+	{/if}
 </svelte:head>
 
-<div class="tool-page">
-  <!-- Breadcrumb -->
-  <nav class="breadcrumb">
-    <a href="/tools">Tools</a>
-    <span class="separator">/</span>
-    <span class="current">{tool.name}</span>
-  </nav>
+<article class="flex flex-col gap-8">
+	<!-- Tool Header -->
+	<header class="flex w-full flex-col items-center px-4 pt-10">
+		<div class="flex w-full max-w-312 md:px-6">
+			<div class="flex flex-row items-start gap-6 lg:items-center">
+				<!-- Logo (hidden on mobile/tablet, visible on desktop) -->
+				<div class="hidden h-24 w-24 flex-shrink-0 overflow-hidden rounded-2xl border-4 border-white bg-white shadow-lg lg:block">
+					{#if tool.logo}
+						<img
+							src={tool.logo}
+							alt="{tool.name} logo"
+							class="h-full w-full"
+						/>
+					{:else}
+						<div
+							class="flex h-full w-full items-center justify-center rounded-2xl text-2xl font-bold text-white"
+							style="background-color: {tool.color || '#6b7280'}"
+						>
+							{tool.name.charAt(0)}
+						</div>
+					{/if}
+				</div>
 
-  <!-- Tool Header -->
-  <header class="tool-header" style="--tool-color: {tool.color || '#6b7280'}">
-    <div class="tool-info">
-      <div class="tool-icon">
-        {#if tool.logo}
-          <img src={tool.logo} alt="{tool.name} logo" class="tool-logo" />
-        {:else}
-          <div class="tool-icon-fallback">
-            {tool.name.charAt(0)}
-          </div>
-        {/if}
-      </div>
+				<!-- Title Content -->
+				<div class="flex max-w-3xl flex-col gap-2">
+					<Breadcrumb
+						items={[
+							{ label: 'Home', href: '/', icon: Home },
+							{ label: 'Tools', href: '/tools' },
+							{ label: tool.name }
+						]}
+					/>
 
-      <div class="tool-details">
-        <h1 class="tool-name">{tool.name}</h1>
-        <p class="tool-description">{tool.description}</p>
+					<!-- Logo (visible on mobile/tablet, between breadcrumb and title) -->
+					<div class="h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border-4 border-white bg-white shadow-lg lg:hidden">
+						{#if tool.logo}
+							<img
+								src={tool.logo}
+								alt="{tool.name} logo"
+								class="h-full w-full"
+							/>
+						{:else}
+							<div
+								class="flex h-full w-full items-center justify-center rounded-2xl text-2xl font-bold text-white"
+								style="background-color: {tool.color || '#6b7280'}"
+							>
+								{tool.name.charAt(0)}
+							</div>
+						{/if}
+					</div>
 
-        <div class="tool-meta">
-          <span class="category-badge">{tool.category}</span>
-          {#if projectCount > 0}
-            <span class="project-count">{projectCount} project{projectCount !== 1 ? 's' : ''}</span>
-          {/if}
-          {#if tool.featured}
-            <span class="featured-badge">Featured</span>
-          {/if}
-        </div>
+					<h1 class="text-4xl font-bold text-gray-900 md:text-5xl">
+						{tool.name}
+					</h1>
 
-        {#if tool.tags && tool.tags.length > 0}
-          <div class="tool-tags">
-            {#each tool.tags as tag}
-              <span class="tag">{tag}</span>
-            {/each}
-          </div>
-        {/if}
+					<p class="text-xl text-gray-600">
+						{tool.description}
+					</p>
+				</div>
+			</div>
+		</div>
+	</header>
 
-        <div class="tool-links">
-          {#if tool.website}
-            <a href={tool.website} target="_blank" rel="noopener" class="link-btn">
-              Website
-            </a>
-          {/if}
-          {#if tool.documentation}
-            <a href={tool.documentation} target="_blank" rel="noopener" class="link-btn link-btn--secondary">
-              Documentation
-            </a>
-          {/if}
-        </div>
-      </div>
-    </div>
-  </header>
+	<!-- Banner Image Section -->
+	{#if tool.banner && tool.banner.trim() !== ''}
+		<section class="flex w-full justify-center lg:px-4">
+			<div class="max-h-115 w-full max-w-312 overflow-hidden bg-gray-200 lg:rounded-xl">
+				<img
+					src={tool.banner}
+					alt=""
+					class="not-prose block h-full w-full object-cover object-center"
+				/>
+			</div>
+		</section>
+	{/if}
 
-  <!-- Projects Section -->
-  {#if projects.length > 0}
-    <section class="projects-section">
-      <h2>Projects using {tool.name}</h2>
-      <div class="projects-grid">
-        {#each projects as project}
-          <ProjectCard {project} highlightTool={tool.slug} />
-        {/each}
-      </div>
-    </section>
-  {:else}
-    <section class="no-projects">
-      <h2>No projects yet</h2>
-      <p>I haven't added any projects using {tool.name} to my portfolio yet. Check back soon!</p>
-    </section>
-  {/if}
+	<!-- Metadata Section -->
+	<section class="flex w-full justify-center px-4">
+		<div class="flex w-full max-w-312 flex-col items-start justify-between gap-4 md:flex-row md:items-center md:px-6">
+			<div class="flex flex-wrap gap-8">
+				<!-- Category -->
+				<div class="flex flex-col gap-1">
+					<span class="text-xs font-medium uppercase text-gray-500">Category</span>
+					<span
+						class="inline-block rounded-lg px-3 py-1 text-sm font-semibold capitalize text-white"
+						style="background-color: {tool.color || '#6b7280'}"
+					>
+						{tool.category}
+					</span>
+				</div>
 
-  <!-- Related Tools -->
-  {#if relatedTools.length > 0}
-    <section class="related-section">
-      <h2>Frequently used with {tool.name}</h2>
-      <div class="related-grid">
-        {#each relatedTools as relatedTool}
-          <ToolCard tool={relatedTool} showProjectCount={false} size="small" />
-        {/each}
-      </div>
-    </section>
-  {/if}
+				<!-- Project Count -->
+				{#if projectCount > 0}
+					<div class="flex flex-col gap-1">
+						<span class="text-xs font-medium uppercase text-gray-500">Projects</span>
+						<span class="text-gray-900">
+							{projectCount} project{projectCount !== 1 ? 's' : ''}
+						</span>
+					</div>
+				{/if}
 
-  <!-- Similar Tools -->
-  {#if categoryTools.length > 0}
-    <section class="similar-section">
-      <h2>More {tool.category} tools</h2>
-      <div class="similar-grid">
-        {#each categoryTools as categoryTool}
-          <ToolCard tool={categoryTool} size="small" />
-        {/each}
-      </div>
-    </section>
-  {/if}
-</div>
+				<!-- Tags -->
+				{#if tool.tags && tool.tags.length > 0}
+					<div class="flex flex-col gap-1">
+						<span class="text-xs font-medium uppercase text-gray-500">Tags</span>
+						<div class="flex flex-wrap gap-2">
+							{#each tool.tags as tag (tag)}
+								<span class="inline-block rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700">
+									{tag}
+								</span>
+							{/each}
+						</div>
+					</div>
+				{/if}
+			</div>
 
-<style>
-  .tool-page {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
+			<!-- Action Buttons -->
+			<div class="flex gap-2">
+				{#if tool.website}
+					<a
+						href={tool.website}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white transition-colors hover:opacity-90"
+						style="background-color: {tool.color || '#6b7280'}"
+					>
+						Website
+					</a>
+				{/if}
+				{#if tool.documentation}
+					<a
+						href={tool.documentation}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+					>
+						Documentation
+					</a>
+				{/if}
+			</div>
+		</div>
+	</section>
 
-  .breadcrumb {
-    margin-bottom: 2rem;
-    font-size: 0.875rem;
-    color: #6b7280;
-  }
+	<!-- Projects Section -->
+	<section class="flex w-full flex-col items-center gap-8 px-4 pt-16 pb-10">
+		<div class="flex w-full max-w-312 flex-col gap-6 md:px-6">
+			<h2 class="text-3xl font-bold text-gray-900">Projects using {tool.name}</h2>
 
-  .breadcrumb a {
-    color: #6b7280;
-    text-decoration: none;
-  }
-
-  .breadcrumb a:hover {
-    color: #374151;
-  }
-
-  .separator {
-    margin: 0 0.5rem;
-  }
-
-  .current {
-    color: #374151;
-    font-weight: 500;
-  }
-
-  .tool-header {
-    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    padding: 3rem;
-    margin-bottom: 3rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .tool-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--tool-color);
-  }
-
-  .tool-info {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-  }
-
-  .tool-logo {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-  }
-
-  .tool-icon-fallback {
-    width: 80px;
-    height: 80px;
-    background: var(--tool-color);
-    color: white;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 2rem;
-  }
-
-  .tool-details {
-    flex: 1;
-  }
-
-  .tool-name {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #111827;
-    margin: 0 0 1rem 0;
-    line-height: 1.1;
-  }
-
-  .tool-description {
-    font-size: 1.25rem;
-    color: #6b7280;
-    margin: 0 0 2rem 0;
-    line-height: 1.6;
-  }
-
-  .tool-meta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .category-badge {
-    background: var(--tool-color);
-    color: white;
-    padding: 0.375rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-transform: capitalize;
-  }
-
-  .project-count {
-    color: var(--tool-color);
-    font-weight: 600;
-    font-size: 0.875rem;
-  }
-
-  .featured-badge {
-    background: linear-gradient(135deg, #fbbf24, #f59e0b);
-    color: white;
-    padding: 0.375rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.025em;
-  }
-
-  .tool-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .tag {
-    background: #f3f4f6;
-    color: #374151;
-    padding: 0.375rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.8125rem;
-    font-weight: 500;
-  }
-
-  .tool-links {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .link-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    background: var(--tool-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.2s ease;
-  }
-
-  .link-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-
-  .link-btn--secondary {
-    background: transparent;
-    color: var(--tool-color);
-    border: 1px solid var(--tool-color);
-  }
-
-  .projects-section {
-    margin-bottom: 4rem;
-  }
-
-  .projects-section h2,
-  .related-section h2,
-  .similar-section h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #111827;
-    margin: 0 0 2rem 0;
-  }
-
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-  }
-
-  .no-projects {
-    text-align: center;
-    padding: 4rem 2rem;
-    color: #6b7280;
-    margin-bottom: 4rem;
-  }
-
-  .no-projects h2 {
-    color: #374151;
-    margin-bottom: 1rem;
-  }
-
-  .related-section,
-  .similar-section {
-    margin-bottom: 4rem;
-  }
-
-  .related-grid,
-  .similar-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .tool-header {
-      padding: 2rem;
-    }
-
-    .tool-info {
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .tool-name {
-      font-size: 2rem;
-    }
-
-    .tool-description {
-      font-size: 1.125rem;
-    }
-
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .related-grid,
-    .similar-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
+			{#if projects.length > 0}
+				<div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+					{#each projects as project (project.slug)}
+						<ProjectCard {project} highlightTool={tool.slug} />
+					{/each}
+				</div>
+			{:else}
+				<div class="py-16 text-center">
+					<p class="text-gray-600">
+						No projects using {tool.name} have been added yet. Check back soon!
+					</p>
+				</div>
+			{/if}
+		</div>
+	</section>
+</article>
