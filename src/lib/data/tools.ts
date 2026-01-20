@@ -212,6 +212,20 @@ export const tools: Tool[] = [
 		tags: ['containers', 'virtualization', 'deployment']
 	},
 
+	{
+		slug: 'googlecloud',
+		name: 'Google Cloud',
+		description: 'Suite of cloud computing services for building and deploying applications',
+		logo: '/images/tools/googlecloud-icon.png',
+		banner: '/images/tools/googlecloud-banner.png',
+		category: 'devops',
+		website: 'https://cloud.google.com',
+		documentation: 'https://cloud.google.com/docs',
+		dailyDriver: true,
+		color: '#4285F4',
+		tags: ['cloud', 'infrastructure', 'serverless']
+	},
+
 	// Languages
 	{
 		slug: 'swift',
