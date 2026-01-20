@@ -17,7 +17,7 @@
 		<div class="flex w-full max-w-312 flex-col gap-8 md:flex-row md:items-center md:gap-12 md:px-6">
 			<div class="flex-shrink-0">
 				<img
-					src="/profile.jpg"
+					src="/profile.png"
 					alt="Kevin Perez"
 					class="h-48 w-48 rounded-2xl object-cover shadow-lg md:h-64 md:w-64"
 					loading="lazy"
