@@ -25,7 +25,7 @@ export const tools: Tool[] = [
 		category: 'frontend',
 		website: 'https://v2.remix.run/',
 		documentation: 'https://v2.remix.run/docs',
-		featured: true,
+		featured: false,
 		color: '#000000',
 		tags: ['react', 'ssr', 'static-generation']
 	},
@@ -66,7 +66,7 @@ export const tools: Tool[] = [
 		category: 'backend',
 		website: 'https://bun.sh',
 		documentation: 'https://bun.sh/docs',
-		featured: true,
+		featured: false,
 		color: '#FBF0DF',
 		tags: ['javascript', 'runtime', 'framework']
 	},
@@ -91,7 +91,7 @@ export const tools: Tool[] = [
 		description: 'Open source Firebase alternative with PostgreSQL',
 		logo: '/images/tools/supabase-icon.png',
 		banner: '/images/tools/supabase-banner.png',
-		category: 'database',
+		category: ['database', 'backend'],
 		website: 'https://supabase.com',
 		documentation: 'https://supabase.com/docs',
 		color: '#3ecf8e',
@@ -105,10 +105,10 @@ export const tools: Tool[] = [
 		description: 'Collaborative interface design tool',
 		logo: '/images/tools/figma-icon.png',
 		banner: '/images/tools/figma-banner.png',
-		category: 'design',
+		category: ['design', 'prototyping', 'collaboration'],
 		website: 'https://www.figma.com',
 		documentation: 'https://help.figma.com',
-		featured: true,
+		featured: false,
 		color: '#f24e1e',
 		tags: ['design', 'prototyping', 'collaboration']
 	},
@@ -118,7 +118,7 @@ export const tools: Tool[] = [
 		description: 'MacOS user interface design tool',
 		logo: '/images/tools/sketch-icon.png',
 		banner: '/images/tools/sketch-banner.png',
-		category: ['design', 'protyping', 'collaboration'],
+		category: ['design', 'prototyping', 'collaboration'],
 		website: 'https://www.sketch.com',
 		documentation: 'https://help.sketch.com',
 		featured: true,
@@ -131,10 +131,10 @@ export const tools: Tool[] = [
 		description: 'Vector graphics editor',
 		logo: '/images/tools/illustrator-icon.png',
 		banner: '/images/tools/illustrator-banner.png',
-		category: ['design', 'protyping', 'collaboration'],
+		category: 'design',
 		website: 'https://www.adobe.com/products/illustrator.html',
 		documentation: 'https://helpx.adobe.com/illustrator.html',
-		featured: true,
+		featured: false,
 		color: '#FF9A00',
 		tags: ['design', 'prototyping', 'collaboration']
 	},
@@ -144,10 +144,10 @@ export const tools: Tool[] = [
 		description: 'Raster graphics editor',
 		logo: '/images/tools/photoshop-icon.png',
 		banner: '/images/tools/photoshop-banner.png',
-		category: ['design', 'protyping', 'collaboration'],
+		category: 'design',
 		website: 'https://www.adobe.com/products/photoshop.html',
 		documentation: 'https://helpx.adobe.com/photoshop.html',
-		featured: true,
+		featured: false,
 		color: '#31A8FF',
 		tags: ['design', 'prototyping', 'collaboration']
 	},
@@ -157,11 +157,11 @@ export const tools: Tool[] = [
 		description: 'Raster graphics editor',
 		logo: '/images/tools/affinity-icon.png',
 		banner: '/images/tools/affinity-banner.png',
-		category: ['design', 'protyping', 'collaboration'],
+		category: 'design',
 		website: 'https://affinity.serif.com/en-us/',
 		documentation: 'https://help.affinity.serif.com/',
-		featured: true,
-		color: '#4EBFEC',
+		featured: false,
+		color: '#A7F176',
 		tags: ['design', 'prototyping', 'collaboration']
 	},
 
@@ -198,10 +198,10 @@ export const tools: Tool[] = [
 		description: 'Modern UI framework for building apps across all Apple platforms',
 		logo: '/images/tools/swift-icon.png',
 		banner: '/images/tools/swift-banner.png',
-		category: 'mobile',
+		category: ['mobile', 'language'],
 		website: 'https://developer.apple.com/xcode/swiftui/',
 		documentation: 'https://developer.apple.com/documentation/swiftui',
-		featured: true,
+		featured: false,
 		color: '#FF9800',
 		tags: ['ios', 'macos', 'apple', 'declarative']
 	},
@@ -211,10 +211,10 @@ export const tools: Tool[] = [
 		description: 'Markup language for structuring and presenting content on the web',
 		logo: '/images/tools/html-icon.png',
 		banner: '/images/tools/html-banner.png',
-		category: 'web-development',
+		category: ['web-development', 'language'],
 		website: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
 		documentation: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
-		featured: true,
+		featured: false,
 		color: '#E44D26',
 		tags: ['web', 'markup', 'structure', 'presentation']
 	},
@@ -225,10 +225,10 @@ export const tools: Tool[] = [
 			'Style sheet language for describing the presentation of a document written in a markup language',
 		logo: '/images/tools/css-icon.png',
 		banner: '/images/tools/css-banner.png',
-		category: 'web-development',
+		category: ['web-development', 'language'],
 		website: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
 		documentation: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
-		featured: true,
+		featured: false,
 		color: '#1572B6',
 		tags: ['web', 'style', 'presentation', 'layout']
 	},
@@ -238,10 +238,10 @@ export const tools: Tool[] = [
 		description: 'Programming language for web development',
 		logo: '/images/tools/js-icon.png',
 		banner: '/images/tools/js-banner.png',
-		category: 'web-development',
+		category: ['web-development', 'language'],
 		website: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
 		documentation: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-		featured: true,
+		featured: false,
 		color: '#F7DF1E',
 		tags: ['web', 'programming', 'scripting', 'client-side']
 	},
@@ -253,7 +253,7 @@ export const tools: Tool[] = [
 		description: 'Visual web development platform for building responsive websites',
 		logo: '/images/tools/webflow-icon.png',
 		banner: '/images/tools/webflow-banner.png',
-		category: ['design', 'web-development'],
+		category: ['design', 'web-development', 'frontend'],
 		website: 'https://webflow.com',
 		documentation: 'https://university.webflow.com',
 		color: '#4353FF',
@@ -267,9 +267,10 @@ export const tools: Tool[] = [
 		description: 'Text editor for developers',
 		logo: '/images/tools/zed-icon.png',
 		banner: '/images/tools/zed-banner.png',
-		category: 'development',
+		category: 'editor',
 		website: 'https://zed.dev',
 		documentation: 'https://zed.dev/docs',
+		featured: true,
 		color: '#084CCF',
 		tags: ['development', 'text-editor', 'code']
 	},
@@ -279,7 +280,7 @@ export const tools: Tool[] = [
 		description: 'Free and open-source code editor developed by Microsoft',
 		logo: '/images/tools/vscode-icon.png',
 		banner: '/images/tools/vscode-banner.png',
-		category: 'development',
+		category: 'editor',
 		website: 'https://code.visualstudio.com',
 		documentation: 'https://code.visualstudio.com/docs',
 		color: '#007ACC',
@@ -291,7 +292,7 @@ export const tools: Tool[] = [
 		description: 'Integrated development environment for macOS',
 		logo: '/images/tools/xcode-icon.png',
 		banner: '/images/tools/xcode-banner.png',
-		category: 'development',
+		category: 'editor',
 		website: 'https://developer.apple.com/xcode/',
 		documentation: 'https://developer.apple.com/documentation/xcode',
 		color: '#147EFB',
@@ -368,8 +369,11 @@ export function getToolBySlug(slug: string): Tool | undefined {
 export function getToolsByCategory() {
 	return tools.reduce(
 		(acc, tool) => {
-			if (!acc[tool.category]) acc[tool.category] = [];
-			acc[tool.category].push(tool);
+			const categories = Array.isArray(tool.category) ? tool.category : [tool.category];
+			categories.forEach((cat) => {
+				if (!acc[cat]) acc[cat] = [];
+				acc[cat].push(tool);
+			});
 			return acc;
 		},
 		{} as Record<string, Tool[]>

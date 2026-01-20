@@ -5,7 +5,7 @@
 		tool,
 		size = 'medium',
 		showDescription = true,
-		showTags = true,
+		showCategories = true,
 		showProjectCount = false,
 		showRole = false,
 		projectCount = 0
@@ -13,7 +13,7 @@
 		tool: Tool | ProjectTool;
 		size?: 'small' | 'medium' | 'large';
 		showDescription?: boolean;
-		showTags?: boolean;
+		showCategories?: boolean;
 		showProjectCount?: boolean;
 		showRole?: boolean;
 		projectCount?: number;
@@ -146,13 +146,19 @@
 				</p>
 			{/if}
 
-			{#if showTags && tool.tags && tool.tags.length > 0}
+			{#if showCategories && tool.category}
 				<div class="mt-3 flex flex-wrap gap-1">
-					{#each tool.tags.slice(0, 3) as tag (tag)}
+					{#if Array.isArray(tool.category)}
+						{#each tool.category as cat (cat)}
+							<span class="rounded bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">
+								{cat.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+							</span>
+						{/each}
+					{:else}
 						<span class="rounded bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">
-							{tag}
+							{tool.category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
 						</span>
-					{/each}
+					{/if}
 				</div>
 			{/if}
 

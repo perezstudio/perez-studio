@@ -6,26 +6,43 @@
 	let selectedCategory = $state('all');
 	let searchQuery = $state('');
 
-	const categories: Record<string, string> = {
-		all: 'All Tools',
-		frontend: 'Frontend',
-		backend: 'Backend',
-		database: 'Database',
-		design: 'Design',
-		devops: 'DevOps',
-		testing: 'Testing',
-		mobile: 'Mobile',
-		development: 'Development',
-		'project-management': 'Project Management',
-		other: 'Other'
-	};
+	// Generate categories dynamically from tools data
+	let categories = $derived.by(() => {
+		const categorySet = new Set<string>();
+		tools.forEach((tool) => {
+			if (Array.isArray(tool.category)) {
+				tool.category.forEach((cat) => categorySet.add(cat));
+			} else {
+				categorySet.add(tool.category);
+			}
+		});
+
+		// Convert to sorted array and create label map
+		const categoryList = Array.from(categorySet).sort();
+		const result: Record<string, string> = { all: 'All Tools' };
+
+		categoryList.forEach((cat) => {
+			// Convert slug to title case label (e.g., 'project-management' -> 'Project Management')
+			result[cat] = cat
+				.split('-')
+				.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+				.join(' ');
+		});
+
+		return result;
+	});
 
 	let filteredTools = $derived.by(() => {
 		let filtered = tools;
 
 		// Filter by category
 		if (selectedCategory !== 'all') {
-			filtered = filtered.filter((tool) => tool.category === selectedCategory);
+			filtered = filtered.filter((tool) => {
+				if (Array.isArray(tool.category)) {
+					return tool.category.includes(selectedCategory);
+				}
+				return tool.category === selectedCategory;
+			});
 		}
 
 		// Filter by search query
@@ -101,10 +118,10 @@
 			<div class="flex flex-wrap gap-2">
 				{#each Object.entries(categories) as [key, label] (key)}
 					<button
-						class="rounded-lg border px-4 py-2 text-sm font-medium transition-colors {selectedCategory ===
+						class="rounded-lg px-4 py-2 text-sm transition-all duration-200 {selectedCategory ===
 						key
-							? 'border-blue-600 bg-blue-600 text-white'
-							: 'border-gray-300 bg-white text-gray-700 hover:border-blue-600 hover:text-blue-600'}"
+							? 'bg-cyan-100 text-cyan-700 font-medium'
+							: 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}"
 						onclick={() => (selectedCategory = key)}
 					>
 						{label}

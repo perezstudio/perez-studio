@@ -5,15 +5,7 @@ export interface Tool {
 	description: string;
 	logo?: string; // Square logo/icon image for cards and lists
 	banner?: string; // Wide banner image for detail pages and featured sections
-	category:
-		| 'frontend'
-		| 'backend'
-		| 'database'
-		| 'design'
-		| 'devops'
-		| 'mobile'
-		| 'testing'
-		| 'other';
+	category: string | string[];
 	website?: string;
 	documentation?: string;
 	version?: string;
