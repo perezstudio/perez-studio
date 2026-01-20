@@ -139,7 +139,7 @@ export const companies: Company[] = [
 				endDate: 'Present',
 				location: 'Milwaukee, WI',
 				description:
-					'Building a suite of tools and resources designed for political campaigns and political parties.'
+					'I led the design and development of mission-critical web applications supporting political campaigns and grassroots organizations nationwide. My work focused on building reliable, user-centered systems for voter outreach, fundraising, and volunteer engagement—often under tight election timelines. I partnered closely with programs, communications, and development teams to translate real-world organizing needs into scalable, well-documented software that held up under pressure.'
 			},
 			{
 				role: 'Operations Associate',
@@ -147,7 +147,7 @@ export const companies: Company[] = [
 				endDate: 'Mar 2023',
 				location: 'American Fork, UT',
 				description:
-					'Building a suite of tools and resources designed for political campaigns and political parties.'
+					'I supported internal operations and program teams by improving workflows, tooling, and data processes across the organization. Working at the intersection of people and systems, I helped identify operational gaps and implemented practical solutions that reduced friction for staff and organizers. This role grounded my approach to technology in empathy, clarity, and real organizational needs.'
 			}
 		]
 	},
@@ -161,7 +161,7 @@ export const companies: Company[] = [
 				endDate: 'Nov 2021',
 				location: 'Salt Lake City, UT',
 				description:
-					'Worked with various clients to build modern web applications using React, Svelte, and Next.js.'
+					'I managed day-to-day operations for a fast-paced service business, overseeing scheduling, internal systems, and process improvements. I introduced workflow automation and operational tooling that reduced redundancy, improved turnaround time, and allowed the team to focus more on customer service and growth. This experience shaped my systems-thinking approach to both people and processes.'
 			}
 		]
 	},
@@ -175,7 +175,7 @@ export const companies: Company[] = [
 				endDate: 'Jul 2020',
 				location: 'Provo, UT',
 				description:
-					'Developed and maintained customer-facing web applications. Collaborated with design and backend teams.'
+					'I led cross-functional teams delivering web, mobile, and design projects for agency clients. I coordinated requirements, timelines, and stakeholder communication while establishing repeatable processes for reviews, documentation, and delivery. Alongside project management, I contributed to UX and interface design, helping ship products that were both visually polished and easy to use.'
 			}
 		]
 	},
@@ -188,7 +188,8 @@ export const companies: Company[] = [
 				startDate: 'Nov 2013',
 				endDate: 'Jul 2015',
 				location: 'Salt Lake City, UT',
-				description: 'Started career building websites and web applications for small businesses.'
+				description:
+					'I founded and led an early-stage ed-tech startup, designing and building a learning management system for public schools from the ground up. I owned product strategy, UX design, and early development while collaborating with educators to ensure the platform met real classroom needs. This experience taught me how to take products from concept to launch—and how to balance vision, constraints, and user trust.'
 			}
 		]
 	}
