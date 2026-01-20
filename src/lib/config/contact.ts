@@ -23,7 +23,7 @@ export const socialLinks: SocialLink[] = [
 	{ href: 'https://www.linkedin.com/in/kevinperezut/', label: 'LinkedIn', icon: LinkedIn }
 ];
 
-export const contactEmail = 'hello@perez.studio';
+export const contactEmail = 'hello@kevinperezut.me';
 
 export const location = {
 	city: 'Milwaukee',
