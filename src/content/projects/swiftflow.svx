@@ -5,7 +5,7 @@ date: "2024-10-05"
 published: true
 featured: true
 tags: ["Apps", "macOS", "Developer Tools"]
-coverImage: "/images/projects/swiftflow-cover.png"
+bannerImage: "/images/projects/swiftflow-cover.png"
 thumbnailImage: "/images/projects/swiftflow-thumbnail.png"
 demoUrl: "https://swiftflow.app"
 demoButtonText: "Visit Website"

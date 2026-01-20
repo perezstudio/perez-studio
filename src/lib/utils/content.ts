@@ -15,7 +15,9 @@ export interface Project {
 	date: string;
 	published: boolean;
 	tags?: string[];
-	coverImage?: string;
+	bannerImage?: string;
+	ogImage?: string;
+	twitterImage?: string;
 	demoUrl?: string;
 	githubUrl?: string;
 	featured?: boolean;
@@ -32,8 +34,8 @@ export interface ProjectModule {
 }
 
 export async function getPosts(): Promise<Post[]> {
-	const modules = import.meta.glob<PostModule>('/src/content/blog/*.svx', { 
-		eager: true 
+	const modules = import.meta.glob<PostModule>('/src/content/blog/*.svx', {
+		eager: true
 	});
 
 	const posts = Object.entries(modules).map(([path, module]) => {
@@ -45,13 +47,13 @@ export async function getPosts(): Promise<Post[]> {
 	});
 
 	return posts
-		.filter(post => post.published)
+		.filter((post) => post.published)
 		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export async function getProjects(): Promise<Project[]> {
-	const modules = import.meta.glob<ProjectModule>('/src/content/projects/*.svx', { 
-		eager: true 
+	const modules = import.meta.glob<ProjectModule>('/src/content/projects/*.svx', {
+		eager: true
 	});
 
 	const projects = Object.entries(modules).map(([path, module]) => {
@@ -63,36 +65,36 @@ export async function getProjects(): Promise<Project[]> {
 	});
 
 	return projects
-		.filter(project => project.published)
+		.filter((project) => project.published)
 		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export async function getPost(slug: string): Promise<PostModule | null> {
-	const modules = import.meta.glob<PostModule>('/src/content/blog/*.svx', { 
-		eager: true 
+	const modules = import.meta.glob<PostModule>('/src/content/blog/*.svx', {
+		eager: true
 	});
-	
+
 	const postPath = `/src/content/blog/${slug}.svx`;
 	const module = modules[postPath];
-	
+
 	if (!module) {
 		return null;
 	}
-	
+
 	return module;
 }
 
 export async function getProject(slug: string): Promise<ProjectModule | null> {
-	const modules = import.meta.glob<ProjectModule>('/src/content/projects/*.svx', { 
-		eager: true 
+	const modules = import.meta.glob<ProjectModule>('/src/content/projects/*.svx', {
+		eager: true
 	});
-	
+
 	const projectPath = `/src/content/projects/${slug}.svx`;
 	const module = modules[projectPath];
-	
+
 	if (!module) {
 		return null;
 	}
-	
+
 	return module;
 }

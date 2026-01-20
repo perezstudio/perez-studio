@@ -5,7 +5,7 @@ date: "2024-11-20"
 published: true
 featured: false
 tags: ["Website", "Development"]
-coverImage: "/images/projects/cerwebsite-cover.png"
+bannerImage: "/images/projects/cerwebsite-cover.png"
 thumbnailImage: "/images/projects/cerwebsite-thumbnail.png"
 demoUrl: "https://contesteveryrace.com/"
 demoButtonText: "Visit Website"

@@ -27,8 +27,11 @@
 	<meta name="description" content={project.description} />
 	<meta property="og:title" content={project.title} />
 	<meta property="og:description" content={project.description} />
-	{#if project.coverImage}
-		<meta property="og:image" content={project.coverImage} />
+	{#if project.ogImage || project.bannerImage}
+		<meta property="og:image" content={project.ogImage || project.bannerImage} />
+	{/if}
+	{#if project.twitterImage}
+		<meta name="twitter:image" content={project.twitterImage} />
 	{/if}
 </svelte:head>
 
@@ -56,11 +59,11 @@
 		</div>
 	</header>
 
-	<!-- Cover Image Section -->
-	{#if project.coverImage}
+	<!-- Banner Image Section -->
+	{#if project.bannerImage}
 		<section class="flex w-full justify-center lg:px-4">
 			<div class="max-h-115 w-full max-w-312 overflow-hidden bg-gray-200 lg:rounded-xl">
-				<img src={project.coverImage} alt={project.title} class="h-full w-full object-cover object-top" />
+				<img src={project.bannerImage} alt={project.title} class="h-full w-full object-cover object-top" />
 			</div>
 		</section>
 	{/if}

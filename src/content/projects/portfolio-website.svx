@@ -5,7 +5,7 @@ date: "2024-12-15"
 published: true
 featured: true
 tags: ["SvelteKit", "Tailwind CSS", "TypeScript", "Web Design"]
-coverImage: "/images/portfolio-cover.jpg"
+bannerImage: "/images/portfolio-cover.jpg"
 demoUrl: "https://your-portfolio.com"
 githubUrl: "https://github.com/yourusername/portfolio"
 ---

@@ -38,7 +38,7 @@
 				{#each featuredProjects as project}
 					<a href="/projects/{project.slug}">
 						<article class="group flex flex-col gap-2 overflow-hidden duration-300">
-							{#if project.coverImage}
+							{#if project.bannerImage}
 								<div class="aspect-video overflow-hidden rounded-lg bg-gray-200">
 									<img
 										src={project.thumbnailImage}
@@ -82,7 +82,7 @@
 				{#each otherProjects as project}
 					<a href="/projects/{project.slug}">
 						<article class="group flex flex-col gap-2 overflow-hidden duration-300">
-							{#if project.coverImage}
+							{#if project.bannerImage}
 								<div class="aspect-video overflow-hidden rounded-lg bg-gray-200">
 									<img
 										src={project.thumbnailImage}
