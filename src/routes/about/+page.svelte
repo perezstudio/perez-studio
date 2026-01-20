@@ -164,7 +164,7 @@
 			<div class="flex justify-center">
 				<a
 					href="/tools"
-					class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-6 py-3 font-medium text-slate-700 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md"
+					class="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-slate-600 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900"
 				>
 					View All Tools
 					<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
