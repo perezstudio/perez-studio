@@ -46,7 +46,7 @@
 				&copy; {currentYear} Perez&nbsp;Studio. All rights reserved.
 			</p>
 			<p class="text-sm text-slate-400">
-				Designed &amp; built with care in {location.city},&nbsp;{location.state}
+				Designed &amp; Built with Care in {location.city},&nbsp;{location.state}
 			</p>
 		</div>
 	</div>
