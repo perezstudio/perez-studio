@@ -10,6 +10,10 @@
 	let isSubmitting = $state(false);
 	let isSubmitted = $state(false);
 
+	let isFormValid = $derived(
+		name.trim() !== '' && email.trim() !== '' && message.trim() !== ''
+	);
+
 	async function handleSubmit(e: Event) {
 		e.preventDefault();
 		isSubmitting = true;
@@ -197,8 +201,10 @@
 					<!-- Submit Button -->
 					<button
 						type="submit"
-						disabled={isSubmitting}
-						class="mt-2 rounded-lg bg-cyan-500 px-6 py-3 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-600 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none"
+						disabled={!isFormValid || isSubmitting}
+						class="mt-2 rounded-lg px-4 py-2 font-medium transition-all duration-200 {!isFormValid || isSubmitting
+							? 'cursor-not-allowed bg-slate-100 text-slate-400'
+							: 'bg-cyan-100 text-cyan-700 hover:bg-cyan-200 hover:text-cyan-800'}"
 					>
 						{#if isSubmitting}
 							Sending...
