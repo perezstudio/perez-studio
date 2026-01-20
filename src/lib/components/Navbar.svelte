@@ -1,15 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { slide } from 'svelte/transition';
+	import { navItems } from '$lib/config/navigation';
 
 	let mobileMenuOpen = $state(false);
-
-	const navItems = [
-		{ href: '/projects', label: 'Projects' },
-		{ href: '/about', label: 'About' },
-		{ href: '/blog', label: 'Blog' },
-		{ href: '/contact', label: 'Contact' }
-	];
 
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;

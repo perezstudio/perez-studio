@@ -6,16 +6,9 @@
 	import Behance from '$lib/icons/behance.svelte';
 	import GitHub from '$lib/icons/github.svelte';
 	import LinkedIn from '$lib/icons/linkedin.svelte';
+	import { navItems } from '$lib/config/navigation';
 
 	const currentYear = new Date().getFullYear();
-
-	const navLinks = [
-		{ href: '/projects', label: 'Projects' },
-		{ href: '/blog', label: 'Blog' },
-		{ href: '/tools', label: 'Tools' },
-		{ href: '/about', label: 'About' },
-		{ href: '/contact', label: 'Contact' }
-	];
 
 	const socialLinks = [
 		{ href: '/contact', label: 'Email', icon: Email },
@@ -34,8 +27,8 @@
 		<div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
 			<!-- Navigation links -->
 			<nav aria-label="Footer navigation">
-				<ul class="flex flex-wrap gap-x-6 gap-y-2">
-					{#each navLinks as link (link.href)}
+				<ul class="flex flex-wrap gap-1">
+					{#each navItems as link (link.href)}
 						<li>
 							<a
 								href={link.href}
