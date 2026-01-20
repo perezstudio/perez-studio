@@ -1,13 +1,7 @@
 <script>
 	import LinkBlock from '$lib/components/LinkCard.svelte';
-	import Email from '$lib/icons/email.svelte';
-	import Twitter from '$lib/icons/twitter.svelte';
-	import Instagram from '$lib/icons/instagram.svelte';
-	import Dribbble from '$lib/icons/dribbble.svelte';
-	import Behance from '$lib/icons/behance.svelte';
-	import GitHub from '$lib/icons/github.svelte';
-	import LinkedIn from '$lib/icons/linkedin.svelte';
 	import ArrowUp from '$lib/icons/arrow.up.right.svelte';
+	import { socialLinks } from '$lib/config/contact';
 </script>
 
 <div>
@@ -22,55 +16,16 @@
 				</p>
 			</div>
 			<div class="flex flex-row items-center gap-1">
-				<a
-					href="/contact"
-					aria-label="Contact me via email"
-					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
-				>
-					<Email className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
-				</a>
-				<a
-					href="https://x.com/perezstudioio"
-					aria-label="Follow me on X (Twitter)"
-					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
-				>
-					<Twitter className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
-				</a>
-				<a
-					href="https://www.instagram.com/perezstudioio/"
-					aria-label="Follow me on Instagram"
-					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
-				>
-					<Instagram className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
-				</a>
-				<a
-					href="https://dribbble.com/perezstudioio"
-					aria-label="View my work on Dribbble"
-					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
-				>
-					<Dribbble className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
-				</a>
-				<a
-					href="https://www.behance.net/perezstudio"
-					aria-label="View my portfolio on Behance"
-					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
-				>
-					<Behance className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
-				</a>
-				<a
-					href="https://github.com/perezstudio"
-					aria-label="View my projects on GitHub"
-					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
-				>
-					<GitHub className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
-				</a>
-				<a
-					href="https://www.linkedin.com/in/kevinperezut/"
-					aria-label="Connect with me on LinkedIn"
-					class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
-				>
-					<LinkedIn className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
-				</a>
+				{#each socialLinks as social (social.label)}
+					{@const IconComponent = social.icon}
+					<a
+						href={social.href}
+						aria-label={social.label}
+						class="group flex h-11 w-11 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-slate-100 hover:shadow-md"
+					>
+						<IconComponent className="w-6 fill-slate-500 transition-colors duration-300 group-hover:fill-cyan-500" />
+					</a>
+				{/each}
 			</div>
 		</div>
 		<div class="flex w-full max-w-312 justify-center md:px-6">

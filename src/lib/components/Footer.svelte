@@ -1,24 +1,8 @@
 <script lang="ts">
-	import Email from '$lib/icons/email.svelte';
-	import Twitter from '$lib/icons/twitter.svelte';
-	import Instagram from '$lib/icons/instagram.svelte';
-	import Dribbble from '$lib/icons/dribbble.svelte';
-	import Behance from '$lib/icons/behance.svelte';
-	import GitHub from '$lib/icons/github.svelte';
-	import LinkedIn from '$lib/icons/linkedin.svelte';
 	import { navItems } from '$lib/config/navigation';
+	import { socialLinks, location } from '$lib/config/contact';
 
 	const currentYear = new Date().getFullYear();
-
-	const socialLinks = [
-		{ href: '/contact', label: 'Email', icon: Email },
-		{ href: 'https://x.com/perezstudioio', label: 'X (Twitter)', icon: Twitter },
-		{ href: 'https://www.instagram.com/perezstudioio/', label: 'Instagram', icon: Instagram },
-		{ href: 'https://dribbble.com/perezstudioio', label: 'Dribbble', icon: Dribbble },
-		{ href: 'https://www.behance.net/perezstudio', label: 'Behance', icon: Behance },
-		{ href: 'https://github.com/perezstudio', label: 'GitHub', icon: GitHub },
-		{ href: 'https://www.linkedin.com/in/kevinperezut/', label: 'LinkedIn', icon: LinkedIn }
-	];
 </script>
 
 <footer class="w-full border-t border-slate-200 bg-slate-50">
@@ -62,7 +46,7 @@
 				&copy; {currentYear} Perez&nbsp;Studio. All rights reserved.
 			</p>
 			<p class="text-sm text-slate-400">
-				Designed &amp; built with care in Milwaukee,&nbsp;WI
+				Designed &amp; built with care in {location.city},&nbsp;{location.state}
 			</p>
 		</div>
 	</div>
