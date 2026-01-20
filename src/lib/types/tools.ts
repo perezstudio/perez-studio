@@ -10,6 +10,7 @@ export interface Tool {
 	documentation?: string;
 	version?: string;
 	featured?: boolean;
+	dailyDriver?: boolean; // Tools used daily
 	color?: string; // Brand color for theming
 	tags?: string[];
 }

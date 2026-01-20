@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { tools, getFeaturedTools } from '$lib/data/tools.js';
+	import ToolProfileCard from '$lib/components/ToolProfileCard.svelte';
+	import { getDailyDriverTools } from '$lib/data/tools.js';
 	import { companies, education, certifications, calculateDuration, calculateCompanyDuration } from '$lib/data/about.js';
 
-	const featuredTools = getFeaturedTools();
-	const otherTools = tools.filter(t => !t.featured).slice(0, 6);
-	const displayTools = [...featuredTools, ...otherTools];
+	const dailyDriverTools = getDailyDriverTools();
 </script>
 
 <svelte:head>
@@ -157,42 +156,9 @@
 					The technologies I use daily to build modern web applications.
 				</p>
 			</div>
-			<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-				{#each displayTools as tool (tool.slug)}
-					<a
-						href="/tools/{tool.slug}"
-						class="tool-card group block rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-						style="--tool-color: {tool.color || '#6b7280'}"
-					>
-						<div class="mb-6 flex justify-center">
-							{#if tool.logo}
-								<img
-									src={tool.logo}
-									alt="{tool.name} logo"
-									class="h-20 w-20 object-contain drop-shadow-md"
-									loading="lazy"
-									decoding="async"
-								/>
-							{:else}
-								<div
-									class="flex h-16 w-16 items-center justify-center rounded-xl text-xl font-bold text-white"
-									style="background-color: {tool.color || '#6b7280'}"
-								>
-									{tool.name.charAt(0)}
-								</div>
-							{/if}
-						</div>
-						<div class="text-center">
-							<h3 class="mb-3 text-xl font-semibold text-slate-900 transition-colors duration-300">
-								{tool.name}
-							</h3>
-							{#if tool.description}
-								<p class="text-sm leading-relaxed text-slate-600 transition-colors duration-300">
-									{tool.description}
-								</p>
-							{/if}
-						</div>
-					</a>
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+				{#each dailyDriverTools as tool (tool.slug)}
+					<ToolProfileCard {tool} size="medium" showCategories={false} />
 				{/each}
 			</div>
 			<div class="flex justify-center">
@@ -209,9 +175,3 @@
 		</div>
 	</section>
 </div>
-
-<style>
-	.tool-card:hover {
-		background: color-mix(in srgb, var(--tool-color) 10%, white);
-	}
-</style>

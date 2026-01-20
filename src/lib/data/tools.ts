@@ -12,6 +12,7 @@ export const tools: Tool[] = [
 		website: 'https://svelte.dev',
 		documentation: 'https://svelte.dev/docs',
 		featured: true,
+		dailyDriver: true,
 		color: '#ff3e00',
 		tags: ['reactive', 'compiler', 'lightweight']
 	},
@@ -26,6 +27,7 @@ export const tools: Tool[] = [
 		website: 'https://v2.remix.run/',
 		documentation: 'https://v2.remix.run/docs',
 		featured: false,
+		dailyDriver: true,
 		color: '#000000',
 		tags: ['react', 'ssr', 'static-generation']
 	},
@@ -39,6 +41,7 @@ export const tools: Tool[] = [
 		website: 'https://tailwindcss.com',
 		documentation: 'https://tailwindcss.com/docs',
 		featured: true,
+		dailyDriver: true,
 		color: '#06b6d4',
 		tags: ['utility-first', 'responsive', 'customizable']
 	},
@@ -94,8 +97,23 @@ export const tools: Tool[] = [
 		category: ['database', 'backend'],
 		website: 'https://supabase.com',
 		documentation: 'https://supabase.com/docs',
+		dailyDriver: true,
 		color: '#3ecf8e',
 		tags: ['postgresql', 'realtime', 'auth']
+	},
+	{
+		slug: 'firebase',
+		name: 'Firebase',
+		description: 'Google platform for building mobile and web applications',
+		logo: '/images/tools/firebase-icon.png',
+		banner: '/images/tools/firebase-banner.png',
+		category: ['database', 'backend'],
+		website: 'https://firebase.google.com',
+		documentation: 'https://firebase.google.com/docs',
+		featured: false,
+		dailyDriver: true,
+		color: '#FFCA28',
+		tags: ['realtime', 'auth', 'hosting', 'google']
 	},
 
 	// Design
@@ -109,6 +127,7 @@ export const tools: Tool[] = [
 		website: 'https://www.figma.com',
 		documentation: 'https://help.figma.com',
 		featured: false,
+		dailyDriver: true,
 		color: '#f24e1e',
 		tags: ['design', 'prototyping', 'collaboration']
 	},
@@ -122,6 +141,7 @@ export const tools: Tool[] = [
 		website: 'https://www.sketch.com',
 		documentation: 'https://help.sketch.com',
 		featured: true,
+		dailyDriver: true,
 		color: '#F7B500',
 		tags: ['design', 'prototyping', 'collaboration']
 	},
@@ -187,6 +207,7 @@ export const tools: Tool[] = [
 		category: 'devops',
 		website: 'https://www.docker.com',
 		documentation: 'https://docs.docker.com',
+		dailyDriver: true,
 		color: '#2496ed',
 		tags: ['containers', 'virtualization', 'deployment']
 	},
@@ -271,6 +292,7 @@ export const tools: Tool[] = [
 		website: 'https://zed.dev',
 		documentation: 'https://zed.dev/docs',
 		featured: true,
+		dailyDriver: true,
 		color: '#084CCF',
 		tags: ['development', 'text-editor', 'code']
 	},
@@ -345,6 +367,7 @@ export const tools: Tool[] = [
 		category: 'project-management',
 		website: 'https://asana.com',
 		documentation: 'https://asana.com/help',
+		dailyDriver: true,
 		color: '#F06A6A',
 		tags: ['project-management', 'task', 'workflow']
 	},
@@ -382,6 +405,10 @@ export function getToolsByCategory() {
 
 export function getFeaturedTools() {
 	return tools.filter((tool) => tool.featured);
+}
+
+export function getDailyDriverTools() {
+	return tools.filter((tool) => tool.dailyDriver);
 }
 
 // Project tool reference - only specify what's unique to the project
