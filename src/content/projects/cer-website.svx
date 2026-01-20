@@ -5,8 +5,10 @@ date: "2024-11-20"
 published: true
 featured: false
 tags: ["Website", "Development"]
-bannerImage: "/images/projects/cerwebsite-cover.png"
-thumbnailImage: "/images/projects/cerwebsite-thumbnail.png"
+bannerImage: "/images/projects/cer-website/banner.png"
+thumbnailImage: "/images/projects/cer-website/thumbnail.png"
+ogImage: "/images/projects/cer-website/opengraph.png"
+twitterImage: "/images/projects/cer-website/twitter.png"
 demoUrl: "https://contesteveryrace.com/"
 demoButtonText: "Visit Website"
 ---
@@ -16,25 +18,116 @@ demoButtonText: "Visit Website"
   import { getProjectTools } from '$lib/data/tools';
 
   const projectTools = getProjectTools([
-    { slug: 'webflow', role: 'Primary framework for the entire website', featured: true }
+    { slug: 'webflow', role: 'Primary framework for the entire website', featured: true },
+    { slug: 'figma', role: 'Design tool for formatting images and icons', featured: true },
   ]);
 </script>
 
 # Contest Every Race Website: Building a Scalable Platform for Grassroots Democracy
 
-As part of the Contest Every Race branding initiative, designed in collaboration with Studio Lake, I was tasked with bringing the new digital vision to life through a robust and flexible website. My goal was to translate the brand's mission—making Democrats competitive in every race—into a digital experience that empowers both the Contest Every Race and Movement Labs teams to communicate, organize, and mobilize more effectively.
+## Overview
 
-## Design Meets Functionality
+The **Contest Every Race** website was developed as part of a broader organizational rebrand led by Studio Lake. The goal of the project was to deliver a modern, flexible, and mission-aligned website that could support storytelling, program growth, and frequent content updates by non-technical teams.
 
-Studio Lake's refreshed branding provided a strong visual and strategic foundation. My role was to ensure that the website not only reflected this new identity but also served as a powerful tool for internal teams. Using Webflow, I built the site from the ground up, leveraging its components system to create a library of reusable elements. These components—ranging from hero banners and program highlights to impact stats and testimonial sections—allow the communications teams to easily create, update, and modify pages without the need for ongoing development support.
+Although the initial plan was to build the site in WordPress, Movement Labs’ existing web infrastructure was fully centered on Webflow. To ensure long-term maintainability and consistency across organizational properties, the project was transitioned to Webflow early in development.
 
-## Empowering Content Creators
+---
 
-A key focus was on usability for non-technical users. By architecting the site around modular, reusable components, I enabled the Contest Every Race and Movement Labs teams to quickly spin up new pages, publish updates, and adapt content to changing priorities. This flexibility ensures that the website can keep pace with the fast-moving world of grassroots organizing and campaign support.
+## The Challenge
 
-## Impact
+Contest Every Race needed a website that could:
 
-The result is a scalable, accessible, and visually cohesive platform that advances the Contest Every Race mission. The site now serves as a hub for candidate recruitment, local party support, campaign resources, and volunteer engagement—helping to build power from the ground up and contest every race, everywhere.
+- Reflect a newly established visual identity and brand system
+- Support rapid updates from marketing and communications teams
+- Scale with new programs, campaigns, and content over time
+- Integrate cleanly with CMS-driven workflows
+- Remain easy to maintain without ongoing engineering support
+
+At the time development began, Webflow had just released its new **Components** and **page builder** features. These tools were powerful but relatively new, requiring careful implementation to balance flexibility with reliability.
+
+---
+
+## Constraints & Considerations
+
+- Movement Labs’ existing websites were already built and maintained in Webflow
+- Marketing and Communications teams needed autonomy to create and update content
+- The implementation needed to closely match Studio Lake’s rebrand designs
+- The site needed to be future-proof without requiring structural rewrites
+
+---
+
+## Platform Decision
+
+Rather than introducing WordPress as a new CMS into the organization’s stack, the project was implemented entirely in **Webflow**. This decision aligned with existing infrastructure, reduced operational complexity, and ensured long-term sustainability for internal teams.
+
+---
+
+## Component-Driven Architecture
+
+Using Webflow’s newly released **Components** feature, I built a modular, reusable system of layout and content components that could be used consistently across the site.
+
+This approach allowed us to:
+
+- Maintain visual and structural consistency
+- Reduce duplicated styles and layouts
+- Enable faster page creation using predefined components
+
+![Reusable component library](IMAGE_URL_HERE)
+
+---
+
+## Empowering Non-Technical Teams
+
+A core objective of the project was to shift content creation closer to the teams doing the storytelling.
+
+By combining Webflow Components with existing CMS collections, the site enabled marketing and communications teams to:
+
+- Create new landing pages independently
+- Publish and iterate on content without engineering support
+- Stay within brand and layout guardrails
+
+This significantly reduced bottlenecks and improved turnaround time for new content.
+
+![Webflow editor and page builder experience](IMAGE_URL_HERE)
+
+---
+
+## CMS & Dynamic Content Integration
+
+The website leveraged Webflow’s CMS to manage structured and reusable content, including:
+
+- Program pages
+- Reusable content sections
+- Dynamic storytelling elements
+
+Dynamic content ensured updates could propagate across the site automatically, reducing the risk of inconsistencies and outdated information.
+
+![CMS collections and dynamic content](IMAGE_URL_HERE)
+
+---
+
+## Outcomes & Impact
+
+- Delivered on schedule in **July 2025** as part of the organization-wide rebrand
+- Enabled non-technical teams to create and manage pages independently
+- Established a scalable, component-based foundation for future campaigns
+- Reduced long-term engineering overhead for content updates
+- Successfully adopted new Webflow features in a production environment
+
+---
+
+## Key Learnings
+
+- Early adoption of platform features can unlock powerful workflows when paired with strong guardrails
+- Component-driven design is critical for scaling content across teams
+- CMS flexibility matters most when it reflects how people actually work
+- Investing in editor experience pays long-term dividends
+
+---
+
+## Reflection
+
+The Contest Every Race website reinforced the importance of building technology that supports people, not just aesthetics. By aligning platform choices, design systems, and team workflows, this project delivered a site that could grow alongside the movement it supports.
 
 <!-- Tools section at the bottom -->
 <ToolsUsed tools={projectTools} />
