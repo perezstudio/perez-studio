@@ -14,7 +14,7 @@
 <div>
 	<!-- Hero Section -->
 	<section class="flex w-full flex-col items-center gap-8 px-4 pt-16 pb-10">
-		<div class="flex w-full max-w-312 flex-col gap-8 md:flex-row md:items-center md:gap-12 md:px-6">
+		<div class="flex w-full max-w-312 flex-col gap-8 md:flex-row md:items-start md:gap-12 md:px-6">
 			<div class="flex-shrink-0">
 				<img
 					src="/profile.png"
@@ -27,13 +27,16 @@
 			<div class="flex flex-col gap-4">
 				<h1 class="text-5xl font-extrabold text-slate-900">About Me</h1>
 				<p class="text-lg text-slate-600">
-					I'm Kevin, a frontend developer and designer based in Milwaukee, Wisconsin.
-					I specialize in building modern, user-focused web applications that solve real-world problems.
+					I'm Kevin, a frontend developer and designer based in Milwaukee, Wisconsin. I specialize in building modern, user-focused web applications that solve real-world problems. Especially in high-stakes, mission-driven environments.
 				</p>
 				<p class="text-lg text-slate-600">
-					With over 8 years of experience in web development, I've worked with startups, agencies,
-					and enterprise clients to create digital experiences that are both beautiful and functional.
-					Currently, I'm focused on building Civics Lab, a suite of tools for political campaigns.
+					With over eight years of experience in web development, I've worked with startups, agencies, and enterprise organizations to design and ship digital products that are both beautiful and resilient. Much of my work has focused on political and civic technology, where I've helped build outreach, data, and fundraising platforms that support first-time candidates, organizers, and grassroots teams across the country. Including systems that have handled millions of messages in the days leading up to an election.
+				</p>
+				<p class="text-lg text-slate-600">
+					I care deeply about building humane, reliable software: tools that are easy to use, hold up under pressure, and reflect equity and dignity by default. That means partnering closely with non-technical teams, writing clear documentation and tests, and designing systems that help people focus on the work that matters most.
+				</p>
+				<p class="text-lg text-slate-600">
+					Currently, I'm building Civics Lab, a growing suite of tools for political campaigns and civic organizations.
 				</p>
 			</div>
 		</div>
