@@ -1,14 +1,14 @@
 ---
 title: "Contest Every Race Website"
 description: "A collaborative task management application with real-time updates and team features"
-date: "2024-11-20"
+date: "2025-07-01"
 published: true
 featured: false
 tags: ["Website", "Development"]
 bannerImage: "/images/projects/cer-website/banner.png"
 thumbnailImage: "/images/projects/cer-website/thumbnail.png"
 ogImage: "/images/projects/cer-website/opengraph.png"
-twitterImage: "/images/projects/cer-website/twitter.png"
+twitterImage: "/images/projects/cer-website/opengraph-twitter.png"
 demoUrl: "https://contesteveryrace.com/"
 demoButtonText: "Visit Website"
 ---
