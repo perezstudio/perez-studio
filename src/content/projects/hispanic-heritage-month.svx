@@ -1,0 +1,151 @@
+---
+title: "Hispanic Heritage Month"
+description: "A collaborative task management application with real-time updates and team features"
+date: "2023-09-01"
+published: true
+featured: false
+tags: ["Social Media", "Design"]
+bannerImage: "/images/projects/hispanic-heritage-month/banner@3x.png"
+thumbnailImage: "/images/projects/hispanic-heritage-month/thumbnail.png"
+ogImage: "/images/projects/hispanic-heritage-month/opengraph.png"
+twitterImage: "/images/projects/hispanic-heritage-month/opengraph-twitter.png"
+demoUrl: "https://contesteveryrace.com/"
+demoButtonText: "Visit Website"
+---
+
+<script>
+  import ToolsUsed from '$lib/components/ToolsUsed.svelte';
+  import { getProjectTools } from '$lib/data/tools';
+  import ImageGallery from '$lib/components/ImageGallery.svelte';
+
+  const postImages = [
+    { src: '/images/projects/hispanic-heritage-month/mlabs-posts/week1.png', alt: 'Initial Post Announcement', caption: 'Initial Post Announcement', fit: 'full' },
+    { src: '/images/projects/hispanic-heritage-month/mlabs-posts/week2.png', alt: 'Week 2 Post', caption: 'Week 2 Post', fit: 'full' },
+    { src: '/images/projects/hispanic-heritage-month/mlabs-posts/week3.png', alt: 'Support Org Post', caption: 'Support Org Post', fit: 'full' },
+    { src: '/images/projects/hispanic-heritage-month/mlabs-posts/week4.png', alt: 'Support Org Post', caption: 'Support Org Post', fit: 'full' },
+    { src: '/images/projects/hispanic-heritage-month/mlabs-posts/week5.png', alt: 'Support Org Post', caption: 'Support Org Post', fit: 'full' },
+    { src: '/images/projects/hispanic-heritage-month/volunteer-posts/week1-green.png', alt: 'Volunteer Sharable Post', caption: 'Volunteer Sharable Post', fit: 'full' },
+    { src: '/images/projects/hispanic-heritage-month/volunteer-posts/week1-yellow.png', alt: 'Volunteer Sharable Post', caption: 'Volunteer Sharable Post', fit: 'full' }
+  ];
+
+  const badgeImages = [
+    { src: '/images/projects/hispanic-heritage-month/badges/top-mentor.png', alt: 'Top Mentor Badge', caption: 'Top Mentor Badge', fit: 'full' },
+    { src: '/images/projects/hispanic-heritage-month/badges/top-sharer.png', alt: 'Top Sharer Badge', caption: 'Top Sharer Badge', fit: 'full' },
+    { src: '/images/projects/hispanic-heritage-month/badges/top-texter.png', alt: 'Top Texter Badge', caption: 'Top Texter Badge', fit: 'full' }
+  ];
+
+  const projectTools = getProjectTools([
+    { slug: 'figma', role: 'Design tool for creating design and final social images', featured: true },
+  ]);
+</script>
+
+# Hispanic Heritage Month Campaign: Driving volunteer growth, engagement, and impact through community-centered storytelling
+
+## Overview
+
+For Hispanic Heritage Month, **[Movement Labs](https://movementlabs.com)** launched a multi-channel social media and volunteer engagement campaign designed to celebrate Latino organizers while driving measurable participation across our organizing programs.
+
+The campaign combined outward-facing social content with internal volunteer incentives, creating a feedback loop that attracted new volunteers, re-energized existing ones, and increased overall contribution levels.
+
+---
+
+## Campaign Goals
+
+This campaign was designed around three clear objectives:
+
+1. **Increase volunteer signups for partner organizations**
+2. **Grow Movement Labs’ volunteer base**
+3. **Boost engagement among existing Movement Labs volunteers**
+
+Rather than treating these goals separately, the campaign intentionally connected them—using celebration, recognition, and community to drive action.
+
+---
+
+## Strategy & Execution
+
+The campaign consisted of **two coordinated efforts**: a public-facing social media campaign and the launch of a new internal volunteer incentive program.
+
+---
+
+## Effort 1: Social Media Campaign
+
+We published a series of Hispanic Heritage Month social media posts highlighting the importance of Latino organizing, community leadership, and civic participation. Each post was designed to:
+
+- Celebrate Hispanic and Latino contributions to progressive movements
+- Create an emotional connection rooted in shared values
+- Include clear calls-to-action encouraging viewers to get involved
+
+These posts were optimized for engagement and volunteer conversion, linking directly to signup opportunities for Movement Labs and partner organizations.
+
+**Campaign posts:**
+- https://www.facebook.com/share/p/1ANngiqmdr/
+- https://www.facebook.com/share/p/1C12P2BCsj/
+- https://www.facebook.com/share/p/14LEoFMx4BN/
+- https://www.facebook.com/share/p/17uUV94DDT/
+
+<ImageGallery images={postImages} type="grid" columns={3} />
+
+---
+
+## Effort 2: Monthly Badges Program
+
+Alongside the social campaign, we launched the **Monthly Badges Program**—a new volunteer recognition system designed to encourage consistency and sustained participation.
+
+This program rewarded volunteers for:
+- Completing monthly organizing activities
+- Increasing their time commitment
+- Maintaining consistent engagement over time
+
+To support adoption, we promoted the program directly within the Movement Labs volunteer Slack channel, creating visibility, friendly competition, and peer motivation.
+
+This internal reinforcement ensured that new volunteers didn’t just sign up—but stayed engaged.
+
+<ImageGallery images={badgeImages} type="grid" columns={3} />
+
+---
+
+## Results & Impact
+
+The campaign produced strong, measurable outcomes across all three goals:
+
+- **15% increase in average donations**
+- **25% increase in total volunteers**
+- **Monthly average volunteer texting time increased from 1 hour to 4 hours**
+
+These results demonstrated that pairing values-driven storytelling with structured incentives can significantly increase both participation and impact.
+
+---
+
+## Why It Worked
+
+Several factors contributed to the campaign’s success:
+
+- **Cultural relevance:** Messaging was timely, celebratory, and community-centered
+- **Clear calls-to-action:** Every post guided viewers toward tangible next steps
+- **Internal reinforcement:** The badges program converted interest into sustained action
+- **Positive feedback loop:** Increased engagement led to higher morale, which drove even more participation
+
+Rather than relying on a single channel, the campaign aligned external outreach with internal engagement—creating momentum on both fronts.
+
+---
+
+## Takeaways
+
+This campaign reinforced a key insight for volunteer-driven organizing:
+
+> **Recognition, representation, and purpose are powerful motivators when paired with clear pathways to action.**
+
+By celebrating community identity while offering concrete ways to participate and be recognized, Movement Labs successfully expanded its volunteer base and deepened engagement among existing volunteers.
+
+---
+
+## Looking Ahead
+
+Building on this success, Movement Labs plans to:
+- Expanded the Monthly Badges program
+- Refine social-to-volunteer conversion strategies across future campaigns
+
+This Hispanic Heritage Month campaign now serves as a model for future community-driven organizing initiatives.
+
+<!-- Tools section at the bottom -->
+<ToolsUsed tools={projectTools} />
