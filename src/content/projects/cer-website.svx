@@ -5,7 +5,7 @@ date: "2025-07-01"
 published: true
 featured: false
 tags: ["Website", "Development"]
-bannerImage: "/images/projects/cer-website/banner.png"
+bannerImage: "/images/projects/cer-website/banner@3x.png"
 thumbnailImage: "/images/projects/cer-website/thumbnail.png"
 ogImage: "/images/projects/cer-website/opengraph.png"
 twitterImage: "/images/projects/cer-website/opengraph-twitter.png"

@@ -5,7 +5,7 @@ date: "2024-10-05"
 published: true
 featured: true
 tags: ["Apps", "macOS", "Developer Tools"]
-bannerImage: "/images/projects/swiftflow/banner.png"
+bannerImage: "/images/projects/swiftflow/banner@3x.png"
 thumbnailImage: "/images/projects/swiftflow/thumbnail.png"
 ogImage: "/images/projects/swiftflow/opengraph.png"
 twitterImage: "/images/projects/swiftflow/opengraph-twitter.png"
@@ -153,7 +153,7 @@ The long-term vision is simple:
 **Make SwiftUI the most approachable native UI framework—without diluting its power.**
 
 Ready to see what’s possible?
-Join the early beta and start building native Apple apps visually—with SwiftFlow.
+Join the [Early Access Program](https://swiftflow.app) and start building native Apple apps visually—with SwiftFlow.
 
 <!-- Tools section at the bottom -->
 <ToolsUsed tools={projectTools} />
