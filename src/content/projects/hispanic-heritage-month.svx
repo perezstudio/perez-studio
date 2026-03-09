@@ -1,6 +1,6 @@
 ---
 title: "Hispanic Heritage Month"
-description: "A collaborative task management application with real-time updates and team features"
+description: "A multi-channel social media and volunteer engagement campaign for Movement Labs celebrating Latino heritage and organizers."
 date: "2023-09-01"
 published: true
 featured: false

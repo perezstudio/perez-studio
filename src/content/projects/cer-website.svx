@@ -1,6 +1,6 @@
 ---
 title: "Contest Every Race Website"
-description: "A collaborative task management application with real-time updates and team features"
+description: "A component-driven Webflow website built for Contest Every Race as part of an organization-wide rebrand."
 date: "2025-07-01"
 published: true
 featured: false
