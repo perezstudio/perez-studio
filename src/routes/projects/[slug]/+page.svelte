@@ -55,6 +55,20 @@
 				<p class="text-xl text-gray-600">
 					{project.description}
 				</p>
+
+				{#if project.demoUrl}
+					<a
+						href={project.demoUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="mt-2 inline-flex w-fit items-center gap-2 rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+					>
+						{project.demoButtonText || 'Visit Website'}
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+						</svg>
+					</a>
+				{/if}
 			</div>
 		</div>
 	</header>
